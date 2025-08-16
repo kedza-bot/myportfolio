@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Segoe UI;
+}
+:root{
+    --font-family: 'Segoe UI', sans-serif;
+    --backgroung60: #f7f7f8;
+    --background60-2: #f5f5f5;
+    --headings30: #202123;
+    --headings30-2: #101820;
+    --highlight10: #07553b;
+    --highlight10-2: #10a37f;
+}
+/*----------------------------------------------**************header**************----------------------------------------------*/
+header{
+    width: 28%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--backgroung60);
+    padding: 20px;
+}
