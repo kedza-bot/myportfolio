@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
 <!----------------------------*************** Profile Section***************------------------------------- -->
-        <img src="" alt="profile picture" id="profile-picture">
-        <h2>Kelvin Ngwenya</h2>
-        <p>@mrafrica</p>
+        <div class="profile-picture"></div>
+        
+        <div class="name-badge">
+            <h2 class="profile-name">Kelvin Ngwenya</h2>
+            <img src="images/verified-badge-svgrepo-com.svg" alt="background" class="verified" >
+            <p class="verified-text">Verified</p>
+        </div>
+        <p class="profile-tag">@mrafrica</p>
 <!-------------------------************** Navigation Menu****************************------------------------->
-        <button id="toggle-theme">Toggle Theme</button>
+        <div class="themes">
+            <i id="toggle-light" class="fa-light fa-cloud-moon"></i>
+            <i id="toggle-dark" class="fa-regular fa-sun"></i>
+        </div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#about">home</a></li>
-                <li><a></a></li>
+                <li><a href="about">About</a></li>
                 <li><a href="#Achievements">Achievements</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -136,5 +145,7 @@
             <h2>Chatroom</h2>
             <p>Join the conversation in my chatroom!</p>
         </section>
+
+        
     </body>
 </html>
