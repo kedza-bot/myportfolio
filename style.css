@@ -14,10 +14,11 @@ body{
     --headings30-2: #101820;
     --highlight10: #07553b;
     --highlight10-2: #10a37f;
+    --light-bg: #bdb9b9;
 }
 /*----------------------------------------------**************header**************----------------------------------------------*/
 header{
-    width: 28%;
+    width: 20%;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -96,19 +97,22 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: var(--headings30);
+    background-color: transparent;
     width: 50px;
-    height: 20px;
-    border-radius: 5px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #a39f9f;
     position: absolute;
     top: 20px;
     right: 20px;
+    padding: 5px;
 }
 #toggle-light:active{
     width: 30px;
     height: 30px;
     border: none;
-    background-color: transparent;
+    background-color: green;
+    padding: auto;
     cursor: pointer;
 }
 #toggle-dark:active{
@@ -118,22 +122,55 @@ header{
     background-color: transparent;
     cursor: pointer;
 }
-nav{
-    margin-top: 20px;
+/* Reset list style */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.nav-links{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    font-family: var(--font-family);
-    font-weight: 400;
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-.nav-links li a{
-    text-decoration: none;
-    color: var(--headings30);
-    font-size: 1rem;
-    line-height: 1.5rem;
-    transition: color 0.3s ease-in-out;
+
+.nav-menu li:hover {
+  background: var(--light-bg); /* light grey */
+  color: var(--headings30-2);
+  border-radius: 6px;
+}
+
+/* Icon style */
+.nav-icons {
+  color: #333;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li:hover .nav-icons {
+  color: var(--headings30-2);
+  transform: rotate(-15deg); /* rotate a bit back */
+}
+
+/* Link style */
+.nav-menu a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.nav-menu li:hover a {
+  transform: scale(1.05); /* grow a bit */
+  font-weight: 600;
+}
+section{
+    padding: 20px;
+    margin-left: 20%;
+    background-color: var(--background60-2);
+    min-height: 100vh;
 }
