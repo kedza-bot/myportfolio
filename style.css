@@ -15,6 +15,9 @@ body{
     --highlight10: #07553b;
     --highlight10-2: #10a37f;
     --light-bg: #bdb9b9;
+    --font-size: 1rem;
+    --line-height: 1.5rem;
+    --font-weight: 300;
 }
 /*----------------------------------------------**************header**************----------------------------------------------*/
 header{
@@ -98,7 +101,7 @@ header{
     align-items: center;
     margin-bottom: 20px;
     background-color: transparent;
-    width: 50px;
+    width: 60px;
     height: 30px;
     border-radius: 15px;
     border: 1px solid #a39f9f;
@@ -111,7 +114,7 @@ header{
     width: 30px;
     height: 30px;
     border: none;
-    background-color: green;
+    color: var(--light-bg);
     padding: auto;
     cursor: pointer;
 }
@@ -174,3 +177,242 @@ section{
     background-color: var(--background60-2);
     min-height: 100vh;
 }
+
+
+/*----------------------------------------------------***********************home section********************----------------------------------------------------*/
+.home-greeting {
+    font-size: 1.5rem;
+    /* Big and bold */
+    font-weight: 500;
+    color: var(--headings30-2);
+    /* Dark text */
+    margin-bottom: 0.5rem;
+}
+
+.home-location {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.home-location .dot {
+    color: #00b894;
+    /* Accent green (can match your theme) */
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.home-description {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+    color: #333;
+    padding: 0 1rem;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 2rem 0;
+}
+
+/*------------------------------------------***********************skills section********************----------------------------------------------------*/
+.skills-section {
+    /* match heading start */
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+
+
+
+
+/* Section heading */
+
+
+.skills-title {
+    margin-top: 2rem;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    margin-bottom: 0.5rem;
+}
+
+.skills-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Skills grid */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 2rem;
+    justify-content: flex-start;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Each skill item */
+.skill {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    perspective: 1000px;
+    /* enables 3D effect */
+}
+
+/* Glassmorphism card */
+.skill img {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+/* Background shape */
+.skill-bg-shape {
+    position: absolute;
+    width: 48%;
+    height: 48%;
+    border-radius: 16px;
+    z-index: 1;
+    transform: rotate(45deg);
+    /* tilted by default */
+    transition: transform 0.5s ease, height 0.5s ease;
+}
+.skill-text {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: var(--headings30-2);
+    text-align: center;
+    width: 100%;
+    opacity: 0; /* hidden by default */
+    transition: opacity 0.3s ease;
+}
+.skill:hover .skill-text {
+    opacity: 1; /* show on hover */
+}
+
+/* Hover effect → grows taller upwards */
+.skill:hover .skill-bg-shape {
+  height: 60%;           /* grows taller */
+  transform: rotate(45deg) translateY(-15%); /* still rotated, but pulled upward */
+}
+
+
+/* Hover effects */
+.skill:hover img {
+    transform: rotateY(-15deg) rotateX(5deg);
+}
+
+
+
+/* Colors for each shape */
+.shape1 {
+    background: #e44d26;
+}
+
+/* HTML */
+.shape2 {
+    background: #264de4;
+}
+
+/* CSS */
+.shape3 {
+    background: #f7df1e;
+}
+
+/* JS */
+.shape4 {
+    background: #142e44;
+}
+
+/* Python */
+.shape5 {
+    background: #114350;
+}
+
+/* React */
+.shape6 {
+    background: #092e20;
+}
+
+/* Django */
+.shape7 {
+    background: #f34f29;
+}
+
+/* Git */
+.shape8 {
+    background: #333;
+}
+
+/* GitHub */
+
+.shape9 {
+    background: #181717;
+}
+
+.site-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    background-color: var(--background60-2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hide mobile menu by default (desktop screens) */
+.mobile-dropdown,
+.mobile-dropdown-links {
+    display: none;
+}
+
+/* Show only on small screens */
+@media (max-width: 768px) {
+    .mobile-dropdown {
+        display: block;
+        /* hamburger icon */
+    }
+
+    .mobile-dropdown-links {
+        display: none;
+        /* keep links hidden until clicked */
+    }
+
+}
+
