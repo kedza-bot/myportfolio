@@ -172,14 +172,15 @@ header{
   font-weight: 600;
 }
 section{
-    padding: 20px;
     margin-left: 20%;
-    background-color: var(--background60-2);
-    min-height: 100vh;
+    min-height: 78vh;
 }
 
 
 /*----------------------------------------------------***********************home section********************----------------------------------------------------*/
+#home{
+    width: 70%;
+}
 .home-greeting {
     font-size: 1.5rem;
     /* Big and bold */
@@ -374,7 +375,414 @@ hr {
     background-color: var(--background60-2);
 }
 
+/*-----------------------------------------***************features section*****************----------------------------------------------------*/
+/* === Featured Section Layout === */
+.featured-section {
+  width: 100%;
+  margin:  0;
+}
 
+.show-case-container {
+  display: grid;
+  grid-template-columns: 50% 25% 25%; /* Projects | About | Skills */
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Shared Box Styles */
+.show-projects,
+.show-about,
+.show-skills {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: none; /* no bg */
+  height: 500px;
+  overflow: hidden;
+}
+
+
+/* === Projects Showcase (50%) === */
+.show-projects {
+  display: grid;
+  grid-template-columns: 35% 65%; /* Left = text, Right = gallery */
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 400px; /* adjust height */
+  background: none;
+  overflow: hidden;
+}
+
+/* Left column: icon, heading, subtitle */
+.show-projects > i {
+  font-size: 400;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.show-projects > p:first-of-type {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  margin-bottom: 0.3rem;
+}
+
+.show-projects > p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Right column: vertical gallery */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.projects-list::-webkit-scrollbar {
+  display: none;
+}
+
+.project-item img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  flex-shrink: 0;
+}
+
+
+
+/* === About Showcase (25%) === */
+.show-about {
+  text-align: center;
+  height: 400px;
+}
+
+.show-about .icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.show-about h2 {
+  font-size: 1.5rem;
+  margin: 0.3rem 0;
+}
+.show-about p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Stacked images gallery */
+.about-gallery {
+  position: relative;
+  width: 100%;
+  height: calc(50% - 50px); /* leaves space for text */
+}
+.about-item {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  transition: transform 0.4s ease, z-index 0.4s ease;
+}
+.about-item img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* stack rotation */
+.about-item:nth-child(odd) { transform: translateX(-50%) rotate(-5deg); }
+.about-item:nth-child(even) { transform: translateX(-50%) rotate(5deg); }
+
+.about-item:hover {
+  transform: translateX(-50%) scale(1.05);
+  z-index: 5;
+}
+
+
+/* === Skills Showcase (25%) === */
+.show-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes gallery down */
+  text-align: center;
+  height: 400px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.show-skills .icon {
+  font-size: 50px;  /* simple icon, no effects */
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.show-skills h2 {
+  font-size: 1.5rem;
+  margin: 0.3rem 0;
+}
+
+.show-skills p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Skills gallery anchored at bottom */
+.skills-gallery {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  animation: scroll-horizontal 20s linear infinite;
+}
+.skills-gallery::-webkit-scrollbar { display: none; }
+
+/* individual skill item */
+.skill-item {
+  flex: 0 0 auto;
+  width: 90px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2),
+              inset 0 1px 2px rgba(255,255,255,0.4);
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.skill-item img {
+  width: 28px;
+  height: 28px;
+}
+
+.skill-text {
+  font-size: 0.8rem;
+  color: #222;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+/* Auto horizontal scroll */
+@keyframes scroll-horizontal {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+/*-----------|--------|---------|
+| 50% project|25%about|25% skills|
+|            |        |         |
+|            |        |         |
+|            |        |         |
+|            |        |         |
+|            |        |         |
+|            |        |         |
+|-----------------------------*/
+
+
+
+
+.featured-section2 {
+  width: 100%;
+  margin: 0;
+}
+
+.show-case-container2 {
+  display: grid;
+  grid-template-columns: 25% 25% 50%; /* Achievements | Chatroom | Services */
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Shared Box Styles */
+.show-achievements,
+.show-chatroom,
+.show-services {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 1rem;
+  background: none;
+  height: 400px; /* updated */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* === Achievements === */
+.show-achievements .heading-text i {
+  font-size: 50px; /* already updated */
+  background: lightgray;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.achievements-head {
+  font-weight: normal;
+  color: black;
+}
+
+.achievements-subheading {
+  color: gray;
+}
+
+.achievements-gallery {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.achievement-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(var(--angle, 0deg));
+  transition: transform 0.3s, z-index 0.3s;
+}
+
+.achievement-item:nth-child(odd) { --angle: -6deg; }
+.achievement-item:nth-child(even) { --angle: 6deg; }
+.achievement-item:nth-child(3n) { --angle: 10deg; }
+
+.achievement-item:hover {
+  z-index: 10;
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* === Chatroom === */
+.show-chatroom {
+  height: 400px;              
+  overflow-y: auto;           
+  padding: 1rem;
+  box-sizing: border-box;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+.show-chatroom::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* hides track */
+}
+
+/* Hide scrollbar for Firefox */
+.show-chatroom {
+  scrollbar-width: none; 
+}
+
+
+/* Chatroom heading */
+.show-chatroom .chat-text i {
+  font-size: 50px; /* already updated */
+  background: lightgray;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 0.5rem; /* smaller spacing */
+}
+
+.show-chatroom .chat-text p:first-of-type {
+  font-weight: normal;
+  color: black;
+  margin: 0.25rem 0; /* tighter spacing */
+}
+
+.show-chatroom .showcase-subtitle {
+  color: gray;
+  font-size: 0.85rem; /* shrink subtitle */
+  margin-bottom: 0.5rem;
+}
+
+/* Chat bubbles */
+.chatroom1, .chatroom2 {
+  max-width: 75%;
+  padding: 0.5rem 0.75rem; /* reduced padding */
+  margin: 0.5rem 0;        /* less gap */
+  font-size: 0.9rem;       /* smaller text */
+  line-height: 1.2rem;
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.chatroom1 {
+  background: white;
+  margin-left: 0;
+}
+
+.chatroom2 {
+  background: green;
+  color: white;
+  margin-left: auto;
+}
+
+
+
+/* === Services === */
+.show-services {
+  display: grid;
+  grid-template-columns: 30% 70%; /* left = services text, right = vertical list */
+  align-items: start;
+  gap: 1rem;
+  height: 400px; /* fixed */
+}
+
+.services-text { 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.show-services .chat-text i {
+  font-size: 50px; /* already updated */
+  background: lightgray;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 0.5rem; /* smaller spacing */
+}
+
+/* NEW: make service items stack vertically */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto; /* scroll if too many */
+  scrollbar-width: none; /* hide scrollbar */
+}
+.services-list::-webkit-scrollbar { display: none; }
+
+/* individual items */
+.services-bold {
+  display: block;
+  margin: 0.3rem 0;
+  filter: blur(1.5px);
+  transition: filter 0.5s;
+  font-weight: 500;
+}
+.services-bold.active {
+  filter: blur(0);
+  font-size: large;
+  font-weight: 700;
+}
 
 
 
