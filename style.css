@@ -381,6 +381,23 @@ hr {
   width: 100%;
   margin:  0;
 }
+.img-icon{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+}
+
+.featured-heading{
+  font-size: var(--font-size);
+  font-weight: bold;
+  color: #000;
+  margin-left: 40px;
+}
+.featured-subtitle{
+  font-size: var(--font-size);
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
 
 .show-case-container {
   display: grid;
@@ -417,9 +434,13 @@ hr {
 
 /* Left column: icon, heading, subtitle */
 .show-projects > i {
-  font-size: 400;
+  font-size: 30px; /* already updated */
+  background: lightgray;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
   margin-bottom: 0.5rem;
-  display: block;
+  width: 45px;
 }
 
 .show-projects > p:first-of-type {
@@ -463,8 +484,13 @@ hr {
 }
 
 .show-about .icon {
-  font-size: 3rem;
+  font-size: 30px; /* already updated */
+  background: lightgray;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: inline-block;
   margin-bottom: 0.5rem;
+  width: 45px;
 }
 .show-about h2 {
   font-size: 1.5rem;
@@ -518,9 +544,15 @@ hr {
 }
 
 .show-skills .icon {
-  font-size: 50px;  /* simple icon, no effects */
+  font-size: 30px; /* already updated */
+  background: lightgray;
+  text-align: center;
+  padding-top: 6.5px;
+  border-radius: 8px;
+  display: inline-block;
   margin-bottom: 0.5rem;
-  color: #333;
+  width: 45px;
+  height: 45px;
 }
 
 .show-skills h2 {
@@ -541,12 +573,13 @@ hr {
   padding: 0.5rem 0;
   overflow-x: auto;
   scrollbar-width: none;
-  animation: scroll-horizontal 20s linear infinite;
+  
 }
 .skills-gallery::-webkit-scrollbar { display: none; }
 
 /* individual skill item */
 .skill-item {
+  animation: scroll-horizontal 5s linear infinite;
   flex: 0 0 auto;
   width: 90px;
   border-radius: 16px;
@@ -571,9 +604,9 @@ hr {
   height: 28px;
 }
 
-.skill-text {
+.skill-text1 {
   font-size: 0.8rem;
-  color: #222;
+  color: #d32626;
   margin-top: 0.5rem;
   font-weight: 500;
   text-align: center;
@@ -583,7 +616,7 @@ hr {
 /* Auto horizontal scroll */
 @keyframes scroll-horizontal {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-700%); }
 }
 
 
@@ -628,7 +661,7 @@ hr {
 
 /* === Achievements === */
 .show-achievements .heading-text i {
-  font-size: 50px; /* already updated */
+  font-size: 30px; /* already updated */
   background: lightgray;
   padding: 0.5rem;
   border-radius: 8px;
@@ -648,6 +681,9 @@ hr {
 .achievements-gallery {
   position: relative;
   margin-top: 1rem;
+}
+.achievement-item img{
+  width: 200px;
 }
 
 .achievement-item {
@@ -692,7 +728,7 @@ hr {
 
 /* Chatroom heading */
 .show-chatroom .chat-text i {
-  font-size: 50px; /* already updated */
+  font-size: 30px; /* already updated */
   background: lightgray;
   padding: 0.5rem;
   border-radius: 8px;
