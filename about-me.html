@@ -95,7 +95,7 @@
 
             
                 <div class="career-items">
-            <!-----------*********************************Alison*************------------------>
+                <!-----------*********************************Alison*************------------------>
                     <div class="career-item">
                         <div class="career-flex">
                             <img src="images/alison-logo.svg" alt="freecodeCamp- logo">
@@ -175,6 +175,42 @@
                     </div>
                 </div>
             </div>
+<!---==============================================================education=====================---------------->
+            <hr class="edu-line"/>
+            <div class="Education">
+                <div class="education-text">
+                    <!-- Icon + Heading/Subheading -->
+                    <div class="education-header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <p class="education">Education</p>
+                            <p class="education-subheading">My educational journey</p>
+                        </div>
+                    </div>
+            
+                    <!-- Portfolio Downloads -->
+                    <div class="downloads">
+                        <div class="portfolio-download" onclick="downloadPortfolio1()">
+                            <i class="fa-solid fa-download"></i>
+                            <p class="download-btn">Download Portfolio</p>
+                        </div>
+                        <div class="portfolio-download" onclick="downloadPortfolio2()">
+                            <i class="fa-solid fa-download"></i>
+                            <p class="download-btn">Download Portfolio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-container">
+                    <img src="images/school.jpg" alt="school-logo">
+                    <div>
+                        <p class="School-name">Nyamasanga Secondary School</p>
+                        <p class="level-of-education">O'level</p>
+                        <p class="year">2018-2021 <span class="location">Chinhoyi,Zimbabwe ID</span></p>
+                    </div>
+                </div>
+            </div>
+
+
 
         </section>
     </main>
@@ -196,6 +232,23 @@
                 });
             });
         });
+
+        function downloadPortfolio1() {
+                // Example: Download a PDF
+                const link = document.createElement("a");
+                link.href = "images/portfolio.pdf";  
+                link.download = "Kedza-Portfolio.pdf";
+                link.click();
+            }
+
+            // Second button function
+            function downloadPortfolio2() {
+                //  Download my  DOCX file 
+                const link = document.createElement("a");
+                link.href = "files/resume.pdf";  
+                link.download = "Kedza-Resume.pdf";
+                link.click();
+            }
 
     </script>
 </body>

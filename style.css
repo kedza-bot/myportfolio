@@ -640,6 +640,7 @@ hr {
 .featured-section2 {
   width: 100%;
   margin: 0;
+  margin-top: 2rem;
 }
 
 .show-case-container2 {
@@ -829,7 +830,7 @@ hr {
 
 #about{
   margin-left: 15rem;
-  width: 60%;
+  width: 80%;
   padding: 2rem;
 }
 .about-heading{
@@ -890,6 +891,7 @@ hr {
 
     .career-text i {
       font-size: var(--h-font-size);
+      margin-top: 6px;
       color: #333;
     }
 
@@ -906,8 +908,8 @@ hr {
     }
 
 .career-item {
-    position: relative; /* needed for shine effect */
-    border: 3px solid rgba(200, 200, 200, 0.3);
+    position: relative; /* shine effect */
+    border: 1px solid gray;
     margin-bottom: 1rem;
     border-radius: 12px;
     padding: 2rem;
@@ -1019,6 +1021,124 @@ hr {
 .show-more-items.active {
   max-height: 500px;          
 }
+/*---------------------------------***************************education---------------------------------------*/
+/* General container */
+.edu-line{
+  border:none;
+  border-top:1px solid var(--color);
+  color:#fff;
+  background-color:#fff;
+  margin-top: 3rem;
+}
+.education-text {
+  margin-left: 0;
+  margin-top: 2rem;
+}
+
+/* Icon + Heading/Subheading alignment */
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.education {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  margin: 0; 
+  font-weight: 500;
+}
+
+.education-subheading {
+  margin: 0;
+  font-size: var(--font-weight);
+  font-family: var(--font-family);
+  color: #555;
+}
+
+/* Download buttons container */
+.downloads {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end;  
+}
+
+/* Glass-effect portfolio download */
+.portfolio-download {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid gray;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.download-btn {
+  margin: 0;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: 200;
+}
+
+/*-----------------------------------------*****education****--------*/
+.edu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* space between image and text */
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2); /* liquid glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid gray; /* changed to gray */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.edu-container:hover {
+    transform: scale(1.02);
+}
+
+.edu-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.edu-container p {
+    margin: 2px 0;
+}
+
+.School-name {
+    font-weight: 500;
+    font-size: var(--h-font-size);
+}
+
+.level-of-education {
+    color: #555;
+}
+
+.year .location {
+    color: #888;
+    font-size: 0.9rem;
+}
+
 
 
 
