@@ -224,6 +224,7 @@
                 <div class="show-case-container2">
 
                     <!-- Achievements -->
+                    <a class="links-wrapper" href="achievements.html">
                     <div class="show-achievements">
                         <div class="heading-text">
                             <i class="fa-solid fa-certificate"></i>
@@ -247,7 +248,7 @@
                                 <img src="images/achievement5.jpg" alt="Achievement 5">
                             </div> -->
                         </div>
-                    </div>
+                    </div></a>
 
                     <!-- Chatroom -->
                     <div class="show-chatroom">
@@ -308,6 +309,41 @@
                 services.forEach((s, i) => s.classList.toggle("active", i === index));
                 index = (index + 1) % services.length;
             }, 5000);
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const body = document.body;
+                const lightBtn = document.getElementById("toggle-light");
+                const darkBtn = document.getElementById("toggle-dark");
+
+                // --- Detect system preference ---
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    body.classList.add("dark-mode");
+                }
+
+                // --- Manual toggle ---
+                lightBtn.addEventListener("click", () => {
+                    body.classList.remove("dark-mode");
+                });
+
+                darkBtn.addEventListener("click", () => {
+                    body.classList.add("dark-mode");
+                });
+            });
+
+            function setActive(icon) {
+                document.querySelectorAll(".themes i").forEach(i => i.classList.remove("active"));
+                icon.classList.add("active");
+            }
+
+            lightBtn.addEventListener("click", () => {
+                body.classList.remove("dark-mode");
+                setActive(lightBtn);
+            });
+
+            darkBtn.addEventListener("click", () => {
+                body.classList.add("dark-mode");
+                setActive(darkBtn);
+            });
 
         </script>
 

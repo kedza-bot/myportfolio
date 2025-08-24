@@ -6,22 +6,45 @@
 body{
     font-family: Segoe UI;
 }
-:root{
-    --font-family: 'Segoe UI', sans-serif;
-    --backgroung60: #f7f7f8;
-    --background60-2: #f5f5f5;
-    --headings30: #202123;
-    --headings30-2: #101820;
-    --highlight10: #07553b;
-    --highlight10-2: #10a37f;
-    --light-bg: #bdb9b9;
-    --color: #575555;
-    --font-size: 1rem;
-    --h-font-size: 1.2rem;
-    --line-height: 1.5rem;
-    --font-weight: 300;
-    --container-bg: #e5f0f3;
+:root {
+  --font-family: 'Segoe UI', sans-serif;
+  --backgroung60: #f7f7f8;
+  --background60-2: #f5f5f5;
+  --headings30: #202123;
+  --headings30-2: #101820;
+  --highlight10: #07553b;
+  --highlight10-2: #10a37f;
+  --light-bg: #bdb9b9;
+  --color: #575555;
+  --font-size: 1rem;
+  --h-font-size: 1.2rem;
+  --line-height: 1.5rem;
+  --font-weight: 300;
+  --container-bg: #e5f0f3;
 }
+
+/* DARK MODE THEME VARIABLES */
+body.dark-mode {
+  --backgroung60: #121212;
+  --background60-2: #1e1e1e;
+  --headings30: #eaeaea;
+  --headings30-2: #f5f5f5;
+  --highlight10: #10a37f;
+  --highlight10-2: #32d09d;
+  --light-bg: #2c2c2c;
+  --color: #cfcfcf;
+  --container-bg: #1c1c1c;
+
+  background: #000;
+  color: #fff;
+}
+
+body, .cert-item, .career-item, .edu-container, 
+.portfolio-download, .subheader, .themes {
+  transition: all 0.3s ease-in-out;
+}
+
+
 /*----------------------------------------------**************header**************----------------------------------------------*/
 header{
     width: 20%;
@@ -59,7 +82,7 @@ header{
 .profile-name {
     font-size: 1.25rem;
     line-height: 1.7rem;
-    color: #000;
+    color:var(--headings30-2);
     font-weight: 500;
     font-family: var(--font-family);
     margin: 0; 
@@ -93,34 +116,51 @@ header{
     text-align: center;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #555;
+    color: var(--color);
     margin-bottom: 20px;
     font-weight: 300;
     font-family: var(--font-family);
 }
-.themes{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    background-color: transparent;
-    width: 60px;
-    height: 30px;
-    border-radius: 15px;
-    border: 1px solid #a39f9f;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 5px;
+
+/*=====================================theme==========================*/
+.themes {
+  display: flex;
+  gap: 90px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 2px auto;
+  backdrop-filter: blur(10px);
+  height: 30px;
+  margin-bottom: 1rem;
 }
-#toggle-light:active{
-    width: 30px;
-    height: 30px;
-    border: none;
-    color: var(--light-bg);
-    padding: auto;
-    cursor: pointer;
+
+.themes i {
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+/* Active state circle */
+.themes i.active {
+  background: gray;
+  color: white;
+}
+
+
+/* Active states */
+body.light-mode {
+  background: #fff;
+  color: #000;
+}
+
+body.dark-mode {
+  background: #000;
+  color: #fff;
+}
+
 #toggle-dark:active{
     width: 30px;
     height: 30px;
@@ -152,7 +192,7 @@ header{
 
 /* Icon style */
 .nav-icons {
-  color: #333;
+  color: var(--headings30-2);
   font-size: 18px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -196,7 +236,7 @@ section{
 .home-location {
     font-size: var(--font-size);
     font-weight: var(--font-weight);
-    color: #666;
+    color: var(--color);
     margin-bottom: 1.5rem;
 }
 
@@ -212,18 +252,18 @@ section{
     margin: 0 auto;
     line-height: var(--line-height);
     font-size: var(--font-size);
-    color: #333;
+    color: var(--color);
     padding: 0 1rem;
 }
 hr {
     border: none;
     height: 1px;
-    background-color: #ddd;
+    background-color: var(--color);
     margin: 2rem 0;
 }
 .links-wrapper{
   text-decoration: none;
-  color: #000;
+  color: var(--headings30-2);
 }
 
 /*------------------------------------------***********************skills section********************----------------------------------------------------*/
@@ -397,13 +437,14 @@ hr {
 .featured-heading{
   font-size: var(--font-size);
   font-weight: bold;
-  color: #000;
+  color: var(--headings30-2);
   margin-left: 40px;
 }
 .featured-subtitle{
   font-size: var(--font-size);
   margin-left: 40px;
   margin-bottom: 20px;
+  color: var(--color);
 }
 
 .show-case-container {
@@ -1142,6 +1183,141 @@ hr {
     color: #888;
     font-size: 0.9rem;
 }
+
+
+
+
+
+/*================================================================***achievements***==================================================*/
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1); /* glass effect */
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.4); /* gray border */
+}
+
+/* Search bar with icon */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+.search-box i {
+  margin-right: 8px;
+  color: gray;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--headings30-2);
+  font-size: 14px;
+}
+
+/* Select dropdown */
+.subheader select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--headings30-2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* Total count under search */
+.subheader .total {
+  position: absolute;
+  left: 0;
+  top: 70px; /* 50px below search */
+  margin-left: 20px;
+  font-size: 16px;
+  color: var(--headings30-2);
+}
+
+
+/*------------------------cards-------------------------------*/
+.cert-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* makes them wrap on smaller screens */
+  margin-top: 30px;
+}
+
+.cert-item {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  background: rgba(255, 255, 255, 0.08); /* glass */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Image takes top 50% */
+.cert-item img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+/* Text takes bottom 50% */
+.cert-item .text {
+  height: 50%;
+  padding: 12px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: var(--headings30-2);
+}
+
+/* Text styling */
+.certficate-description {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.academy {
+  font-size: 14px;
+  color: var(--color);
+  margin-bottom: 8px;
+}
+
+.issued-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: auto;
+  color: var(--color);
+}
+
+.year-of-issued {
+  font-size: 13px;
+  color: var(--headings30-2);
+  font-style: italic;
+}
+
 
 
 

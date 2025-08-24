@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
-    <title>Kelvin || Achievement</title>
+    <title>Kelvin || Achievements</title>
 </head>
 <body>
     <header>
@@ -56,6 +56,112 @@
 
         </nav>
     </header>
+
+    <!----------------------------****************************main section***************************--------------------->
+    <main>
+        <section id="about">
+            <h2 class="about-heading" >Achievements</h2>
+            <p class="about-brief" >A curated collection of certificates and badges I’ve earned throughout my professional and academic journey.</p>
+            <hr class="about-line">
+
+            <div class="subheader">
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="search" id="search" placeholder="Search...">
+                </div>
+            
+                <select id="sort">
+                    <option value="all" selected>Sort</option>
+                    <option value="web">Web dev</option>
+                    <option value="graphic">Graphic</option>
+                </select>
+            
+                <p class="total" id="total">0</p>
+            </div>
+
+            <div class="cert-container">
+                <div class="cert-item" data-category="web">
+                    <img src="images/Achievement2.png" alt="fnb-certificate">
+                    <div class="text">
+                        <p class="certficate-description">Full stack developer</p>
+                        <p class="academy">FNB App Academy</p>
+                        <p class="issued-title">Issued on</p>
+                        <p class="year-of-issued">july-2025</p>
+                    </div>
+                </div>
+
+                <div class="cert-item" data-category="graphic">
+                    <img src="images/Achievements1.png" alt="alison-certificate">
+                    <div class="text">
+                        <p class="certficate-description">Graphic and Visuals</p>
+                        <p class="academy">Alison</p>
+                        <p class="issued-title">Issued on</p>
+                        <p class="year-of-issued">july-2024</p>
+                    </div>
+                </div>
+
+                <div class="cert-item" data-category="web">
+                    <img src="images/Achievements3.png" alt="comming soon">
+                    <div class="text">
+                        <p class="certficate-description">Full stack developer</p>
+                        <p class="academy">Free Code Camp</p>
+                        <p class="issued-title">Issued on</p>
+                        <p class="year-of-issued">current-2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
+
+
+    <script>
+  const searchInput = document.getElementById("search");
+  const sortSelect  = document.getElementById("sort");
+  const container   = document.querySelector(".cert-container");
+  const cards       = Array.from(document.querySelectorAll(".cert-item"));
+  const totalEl     = document.getElementById("total");
+
+  const norm = s => (s || "").toString().trim().toLowerCase();
+
+  function applyFilters() {
+    const q   = norm(searchInput.value);
+    const cat = sortSelect.value; // 'all' | 'web' | 'graphic'
+
+    // Step 1: filter
+    let visibleCards = cards.filter(card => {
+      const cardCat = card.dataset.category || "";
+      const text    = norm(card.innerText);
+
+      const matchesSearch = !q || text.includes(q);
+      const matchesCat    = (cat === "all") || (cardCat === cat);
+
+      return matchesSearch && matchesCat;
+    });
+
+    // Step 2: reorder cards
+    container.innerHTML = ""; // clear
+    visibleCards.forEach(c => container.appendChild(c));
+
+    // Step 3: hide non-matching (so search doesn’t leave old ones)
+    cards.forEach(card => {
+      if (visibleCards.includes(card)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Step 4: update total
+    totalEl.textContent = visibleCards.length;
+  }
+
+  searchInput.addEventListener("input", applyFilters);
+  sortSelect.addEventListener("change", applyFilters);
+
+  applyFilters(); // run once on load
+</script>
+
+
 </body>
 </html>
