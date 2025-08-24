@@ -221,6 +221,10 @@ hr {
     background-color: #ddd;
     margin: 2rem 0;
 }
+.links-wrapper{
+  text-decoration: none;
+  color: #000;
+}
 
 /*------------------------------------------***********************skills section********************----------------------------------------------------*/
 .skills-section {
