@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kelvin || blog</title>
+    <title>Chat App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-
+    <!-------header----------->
     <header>
         <!----------------------------*************** Profile Section***************------------------------------- -->
         <div class="profile-picture"></div>
@@ -58,19 +58,110 @@
 
         </nav>
     </header>
-    <main>
-        <h1 style="font-size: 3.25rem;
-    line-height: 1.7rem;
-    color:var(--headings30-2);
-    font-weight: 900;
-    font-family: var(--font-family);
-    text-align: center; 
-    position: 
-    absolute; 
-    top: 50%;
-    left: 50%; ">Coming Soon</h1>
-    </main>
-    <script src="config.js"></script>
-    
+    <style>
+        .auth-buttons {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .auth-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background: #4285F4;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .auth-buttons button:nth-child(2) {
+            background: #333;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+            position: relative;
+        }
+
+        .message.sent {
+            background: #DCF8C6;
+            margin-left: auto;
+        }
+
+        .message.received {
+            background: #E5E5EA;
+            margin-right: auto;
+        }
+
+        .message small {
+            display: block;
+            font-size: 0.7rem;
+            color: gray;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 15px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- Login Buttons -->
+    <div class="auth-buttons">
+        <button onclick="loginWithGoogle()">Sign in with Google</button>
+        <button onclick="loginWithGithub()">Sign in with Github</button>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box">
+            <!-- Messages will load here -->
+        </div>
+
+        <!-- Message input -->
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
