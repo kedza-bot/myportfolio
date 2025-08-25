@@ -16,6 +16,7 @@ body{
   --highlight10-2: #10a37f;
   --light-bg: #bdb9b9;
   --color: #575555;
+  --color2: #999;
   --font-size: 1rem;
   --h-font-size: 1.2rem;
   --line-height: 1.5rem;
@@ -33,6 +34,7 @@ body.dark-mode {
   --highlight10-2: #32d09d;
   --light-bg: #2c2c2c;
   --color: #cfcfcf;
+  --color2: #222;
   --container-bg: #1c1c1c;
 
   background: #000;
@@ -302,7 +304,7 @@ hr {
 
 .skills-subtitle {
     font-size: 1rem;
-    color: #555;
+    color: var(--color);
     margin-bottom: 2rem;
 }
 
@@ -429,7 +431,7 @@ hr {
 .site-footer {
     text-align: center;
     font-size: 0.875rem;
-    color: #666;
+    color: var(--color);
     margin-top: 2rem;
     padding: 1rem 0;
     background-color: var(--background60-2);
@@ -496,7 +498,7 @@ hr {
 /* Left column: icon, heading, subtitle */
 .show-projects > i {
   font-size: 30px; /* already updated */
-  background: lightgray;
+  background: var(--color2);
   padding: 0.5rem;
   border-radius: 8px;
   display: inline-block;
@@ -546,7 +548,7 @@ hr {
 
 .show-about .icon {
   font-size: 30px; /* already updated */
-  background: lightgray;
+  background: var(--color2);
   padding: 0.5rem;
   border-radius: 8px;
   display: inline-block;
@@ -559,7 +561,7 @@ hr {
 }
 .show-about p {
   font-size: 1rem;
-  color: #555;
+  color: var(--color);
   margin-bottom: 1rem;
 }
 
@@ -606,7 +608,7 @@ hr {
 
 .show-skills .icon {
   font-size: 30px; /* already updated */
-  background: lightgray;
+  background: var(--color2);
   text-align: center;
   padding-top: 6.5px;
   border-radius: 8px;
@@ -623,7 +625,7 @@ hr {
 
 .show-skills p {
   font-size: 1rem;
-  color: #555;
+  color: var(--color);
   margin-bottom: 0.5rem;
 }
 
@@ -664,15 +666,6 @@ hr {
   width: 28px;
   height: 28px;
 }
-
-.skill-text1 {
-  font-size: 0.8rem;
-  color: #d32626;
-  margin-top: 0.5rem;
-  font-weight: 500;
-  text-align: center;
-}
-
 
 /* Auto horizontal scroll */
 @keyframes scroll-horizontal {
@@ -724,7 +717,7 @@ hr {
 /* === Achievements === */
 .show-achievements .heading-text i {
   font-size: 30px; /* already updated */
-  background: lightgray;
+  background: var(--color2);
   padding: 0.5rem;
   border-radius: 8px;
   display: inline-block;
@@ -733,7 +726,7 @@ hr {
 
 .achievements-head {
   font-weight: normal;
-  color: black;
+  color: var(--headings30-2);
 }
 
 .achievements-subheading {
@@ -791,7 +784,7 @@ hr {
 /* Chatroom heading */
 .show-chatroom .chat-text i {
   font-size: 30px; /* already updated */
-  background: lightgray;
+  background: var(--color2);
   padding: 0.5rem;
   border-radius: 8px;
   display: inline-block;
@@ -800,12 +793,12 @@ hr {
 
 .show-chatroom .chat-text p:first-of-type {
   font-weight: normal;
-  color: black;
+  color: var(--headings30-2);
   margin: 0.25rem 0; /* tighter spacing */
 }
 
 .show-chatroom .showcase-subtitle {
-  color: gray;
+  color: var(--color);
   font-size: 0.85rem; /* shrink subtitle */
   margin-bottom: 0.5rem;
 }
@@ -822,13 +815,13 @@ hr {
 }
 
 .chatroom1 {
-  background: white;
+  background: var(--backgroung60);
   margin-left: 0;
 }
 
 .chatroom2 {
   background: green;
-  color: white;
+  color: var(--backgroung60);
   margin-left: auto;
 }
 
@@ -851,7 +844,7 @@ hr {
 
 .show-services .chat-text i {
   font-size: 50px; /* already updated */
-  background: lightgray;
+  background: var(--color);
   padding: 0.5rem;
   border-radius: 8px;
   display: inline-block;
@@ -950,7 +943,7 @@ hr {
     .career-text i {
       font-size: var(--h-font-size);
       margin-top: 6px;
-      color: #333;
+      color: var(--color);
     }
 
     .career-head {
@@ -1045,12 +1038,12 @@ hr {
       font-size: var(--font-size);
       font-weight: 500;
       margin: 2px 0;
-      color: #555;
+      color: var(--color);
     }
 
     .career-date {
       font-size: 0.9rem;
-      color: #888;
+      color: var(--color);
     }
 
     .show-more {
@@ -1073,7 +1066,7 @@ hr {
   transition: max-height 2s ease; 
   margin-top: 0.5rem;
   padding-left: 1rem;
-  color: #444;
+  color: var(--color);
 }
 
 .show-more-items.active {
@@ -1084,8 +1077,8 @@ hr {
 .edu-line{
   border:none;
   border-top:1px solid var(--color);
-  color:#fff;
-  background-color:#fff;
+  color:var(--color);
+  background-color:var(--light-bg);
   margin-top: 3rem;
 }
 .education-text {
@@ -1112,7 +1105,7 @@ hr {
   margin: 0;
   font-size: var(--font-weight);
   font-family: var(--font-family);
-  color: #555;
+  color: var(--color);
 }
 
 /* Download buttons container */
@@ -1189,11 +1182,11 @@ hr {
 }
 
 .level-of-education {
-    color: #555;
+    color: var(--color);
 }
 
 .year .location {
-    color: #888;
+    color: var(--color);
     font-size: 0.9rem;
 }
 
@@ -1226,7 +1219,7 @@ hr {
 
 .search-box i {
   margin-right: 8px;
-  color: gray;
+  color: var(--color);
 }
 
 .search-box input {
