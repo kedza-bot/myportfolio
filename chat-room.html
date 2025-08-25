@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Chat App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -59,109 +60,177 @@
         </nav>
     </header>
     <style>
-        .auth-buttons {
-            text-align: center;
-            margin: 20px;
-        }
+        .chat-room {
+  position: fixed;
+  top: 0;
+  left: 17rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+}
 
-        .auth-buttons button {
-            margin: 5px;
-            padding: 10px 20px;
-            border: none;
-            background: #4285F4;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+.chat-heading {
+  margin: 0;
+  font-size: 1.5rem;
+}
 
-        .auth-buttons button:nth-child(2) {
-            background: #333;
-        }
+.chat-brief {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #333;
+}
 
-        .chat-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 80vh;
-        }
+.about-line {
+  border: none;
+  height: 1px;
+  background: #999;
+  margin-top: 10px;
+}
 
-        .chat-box {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
+/* Auth Buttons */
+.auth-buttons {
+  text-align: center;
+  margin: 100px 20px 20px 20px;
+}
 
-        .message {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 70%;
-            position: relative;
-        }
+.auth-buttons button {
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #8c8d8f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
-        .message.sent {
-            background: #DCF8C6;
-            margin-left: auto;
-        }
+.auth-buttons button:nth-child(2) {
+  background: #333;
+}
 
-        .message.received {
-            background: #E5E5EA;
-            margin-right: auto;
-        }
+/* Chat Container */
+.chat-container {
+  max-width: 600px;
+  margin: 120px auto 20px auto; /* below the fixed header */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
 
-        .message small {
-            display: block;
-            font-size: 0.7rem;
-            color: gray;
-        }
+/* Chat Box */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fafafa;
+}
 
-        .chat-input {
-            display: flex;
-            border-top: 1px solid #ccc;
-        }
+/* Message Styles */
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  position: relative;
+}
 
-        .chat-input input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            outline: none;
-        }
+.message.sent {
+  background: #DCF8C6;
+  margin-left: auto;
+}
 
-        .chat-input button {
-            padding: 15px;
-            border: none;
-            background: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
+.message.received {
+  background: #E5E5EA;
+  margin-right: auto;
+}
+
+.message small {
+  display: block;
+  font-size: 0.7rem;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* Reply Button */
+.reply-btn {
+  font-size: 0.8rem;
+  color: #007BFF;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.reply-btn i {
+  margin-right: 4px;
+  font-style: normal; /* keep icon simple */
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 15px 20px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-input button:hover {
+  background: #45a049;
+}
     </style>
 
-
-    <!-- Login Buttons -->
-    <div class="auth-buttons">
-        <button onclick="loginWithGoogle()">Sign in with Google</button>
-        <button onclick="loginWithGithub()">Sign in with Github</button>
-    </div>
-
-    <!-- Chat Container -->
-    <div class="chat-container">
-        <div id="chat-box" class="chat-box">
-            <!-- Messages will load here -->
+    <section id="chat-room">
+        <div class="chat-room">
+            <h2 class="chat-heading">Welcome To my Chat</h2>
+            <p class="chat-brief">
+                Feel free to share your thoughts, suggestions, questions, or anything else!
+            </p>
+            <hr class="about-line">
         </div>
-
-        <!-- Message input -->
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Type a message...">
-            <button onclick="sendMessage()">Send</button>
+    
+        <!-- Auth Buttons -->
+        <div class="auth-buttons" id="auth-buttons">
+            <button onclick="loginWithGoogle()">Sign in with Google</button>
+            <button onclick="loginWithGithub()">Sign in with Github</button>
         </div>
-    </div>
+    
+        <!-- Chat Container -->
+        <div class="chat-container" id="chat-container" style="display:none;">
+            <div id="chat-box" class="chat-box">
+                <!-- Messages will load here -->
+            </div>
+    
+            <!-- Message Input -->
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
 
     <script src="app.js"></script>
+    <script src="config.js"></script>
 </body>
 
 </html>

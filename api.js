@@ -1,34 +1,68 @@
+let currentUser = null;
+let replyTo = null; // store reply target
+
+function loginWithGoogle() {
+    // Simulate authentication
+    currentUser = "GoogleUser";
+    document.getElementById("auth-buttons").style.display = "none";
+    document.getElementById("chat-container").style.display = "flex";
+}
+
+function loginWithGithub() {
+    currentUser = "GithubUser";
+    document.getElementById("auth-buttons").style.display = "none";
+    document.getElementById("chat-container").style.display = "flex";
+}
+
+function replyMessage(msgId, author) {
+    replyTo = msgId;
+    let input = document.getElementById("message-input");
+    input.placeholder = `Replying to ${author}...`;
+    input.focus();
+}
+
 async function loadMessages() {
-  let res = await fetch('/api/messages/');
-  let data = await res.json();
+    let res = await fetch('/api/messages/');
+    let data = await res.json();
   
-  let chatBox = document.getElementById('chat-box');
-  chatBox.innerHTML = "";
-  data.reverse().forEach(msg => {
-    let div = document.createElement('div');
-    div.className = "message received"; // later check if it's user msg
-    div.innerHTML = `<p>${msg.content}</p><small>${msg.author_name} | ${msg.timestamp}</small>`;
-    chatBox.appendChild(div);
-  });
+    let chatBox = document.getElementById('chat-box');
+    chatBox.innerHTML = "";
+    data.reverse().forEach(msg => {
+        let div = document.createElement('div');
+        div.className = msg.author_name === currentUser ? "message sent" : "message received";
+        div.innerHTML = `
+            <p>${msg.content}</p>
+            <small>${msg.author_name} | ${new Date(msg.timestamp).toLocaleTimeString()}</small>
+            <div class="reply-btn" onclick="replyMessage(${msg.id}, '${msg.author_name}')">
+                <i>↩</i> Reply
+            </div>
+        `;
+        chatBox.appendChild(div);
+    });
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 async function sendMessage() {
-  let input = document.getElementById('message-input');
-  let content = input.value;
+    let input = document.getElementById('message-input');
+    let content = input.value;
 
-  let res = await fetch('/api/send/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + token (after login)
-    },
-    body: JSON.stringify({content})
-  });
+    if (!content.trim()) return;
 
-  if(res.ok){
-    input.value = "";
-    loadMessages();
-  }
+    let res = await fetch('/api/send/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({content, reply_to: replyTo})
+    });
+
+    if(res.ok){
+        input.value = "";
+        input.placeholder = "Type a message...";
+        replyTo = null;
+        loadMessages();
+    }
 }
 
-setInterval(loadMessages, 3000); // auto refresh every 3s
+setInterval(loadMessages, 3000);
