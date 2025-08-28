@@ -29,28 +29,12 @@
                 <li><i class="fa-solid fa-house nav-icons"></i><a href="index.html">Home</a></li>
                 <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="about-me.html">About</a></li>
                 <li><i class="fa-regular fa-trophy nav-icons"></i><a href="achievements.html">Achievements</a></li>
-                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="#projects">Projects</a></li>
-                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="#contact">Contact</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="projects.html">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="contact.html">Contact</a></li>
                 <li><i class="fa-solid fa-blog nav-icons"></i><a href="blog.html">Blog</a></li>
                 <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="chat-room.html">Chatroom</a></li>
 
                 <!---------------******mobile drop down**********************************------------------->
-                <!-- <li class="mobile-dropdown">
-                    <div class="dropdown-bars">
-                        <span class="horizontal-bars"></span>
-                        <span class="horizontal-bars"></span>
-                        <span class="horizontal-bars"></span>
-                    </div>
-                </li>
-                <li class="mobile-dropdown-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#resume">Resume</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#chatroom">Chatroom</a>
-                </li> -->
             </ul>
             <footer class="site-footer">
                 <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
@@ -118,6 +102,31 @@
                         <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub Icon">
                         <span class="skill-text">GitHub</span>
                     </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape9"></span>
+                        <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Icon">
+                        <span class="skill-text">Photoshop</span>
+                    </div>
+                    
+                    <div class="skill">
+                        <span class="skill-bg-shape shape9"></span>
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/coreldraw-icon.svg" alt="CorelDRAW Icon">
+                        <span class="skill-text">CorelDRAW</span>
+                    </div>
+                    
+                    <div class="skill">
+                        <span class="skill-bg-shape shape11"></span>
+                        <img src="https://img.icons8.com/color/48/inkscape.png" alt="Inkscape Icon">
+                        <span class="skill-text">Inkscape</span>
+                    </div>
+                    
+                    <div class="skill">
+                        <span class="skill-bg-shape shape5"></span>
+                        <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma Icon">
+                        <span class="skill-text">Figma</span>
+                    </div>
+                    
+                    
                 </div>
             </div>
 
@@ -217,7 +226,27 @@
                                 <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub Icon">
                                 <p class="skill-text1">GitHub</p>
                             </div>
-                        </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Icon">
+                                <p class="skill-text1">Photoshop</p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/48/coreldraw-2021.png" alt="CorelDRAW Icon">
+                                <p class="skill-text1">CorelDRAW</p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/48/inkscape.png" alt="Inkscape Icon">
+                                <p class="skill-text1">Inkscape</p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma Icon">
+                                <p class="skill-text1">Figma</p>
+                            </div>
+                            
+                            </div>
                     </div>
             </section>
             <section class="featured-section2">
@@ -310,42 +339,8 @@
                 index = (index + 1) % services.length;
             }, 5000);
 
-            document.addEventListener("DOMContentLoaded", () => {
-                const body = document.body;
-                const lightBtn = document.getElementById("toggle-light");
-                const darkBtn = document.getElementById("toggle-dark");
-
-                // --- Detect system preference ---
-                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    body.classList.add("dark-mode");
-                }
-
-                // --- Manual toggle ---
-                lightBtn.addEventListener("click", () => {
-                    body.classList.remove("dark-mode");
-                });
-
-                darkBtn.addEventListener("click", () => {
-                    body.classList.add("dark-mode");
-                });
-            });
-
-            function setActive(icon) {
-                document.querySelectorAll(".themes i").forEach(i => i.classList.remove("active"));
-                icon.classList.add("active");
-            }
-
-            lightBtn.addEventListener("click", () => {
-                body.classList.remove("dark-mode");
-                setActive(lightBtn);
-            });
-
-            darkBtn.addEventListener("click", () => {
-                body.classList.add("dark-mode");
-                setActive(darkBtn);
-            });
-
         </script>
+        <script src="config.js"></script>
 
 </body>
 
