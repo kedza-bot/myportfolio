@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
     <title>Portfolio</title>
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +16,7 @@
         <div class="profile-picture"></div>
         <div class="name-badge">
             <h2 class="profile-name">Kelvin Ngwenya</h2>
-            <img src="images/verified-badge-svgrepo-com.svg" alt="background" class="verified">
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
             <p class="verified-text">Verified</p>
         </div>
         <p class="profile-tag">@mrafrica</p>
@@ -340,7 +341,8 @@
             }, 5000);
 
         </script>
-        <script src="config.js"></script>
+        <script src="{% static 'chatapp/js/config.js' %}"></script>
+
 
 </body>
 
