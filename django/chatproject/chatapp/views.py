@@ -10,6 +10,23 @@ from .serializers import MessageSerializer
 # --------------------------
 def chat_home(request):
     return render(request, "chatapp/index.html")   # looks inside templates/chat/index.html
+def about(request):
+    return render(request, 'chatapp/about-me.html')
+
+def achievements(request):
+    return render(request, 'chatapp/achievements.html')
+
+def projects(request):
+    return render(request, 'chatapp/projects.html')
+
+def contact(request):
+    return render(request, 'chatapp/contact.html')
+def blog(request):
+    return render(request, 'chatapp/blog.html')
+
+def chatroom(request):
+    return render(request, "chatapp/chatroom.html")
+
 
 # --------------------------
 # API VIEWS

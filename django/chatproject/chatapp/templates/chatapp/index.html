@@ -27,14 +27,15 @@
         </div>
         <nav>
             <ul class="nav-menu">
-                <li><i class="fa-solid fa-house nav-icons"></i><a href="index.html">Home</a></li>
-                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="about-me.html">About</a></li>
-                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="achievements.html">Achievements</a></li>
-                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="projects.html">Projects</a></li>
-                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="contact.html">Contact</a></li>
-                <li><i class="fa-solid fa-blog nav-icons"></i><a href="blog.html">Blog</a></li>
-                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="chat-room.html">Chatroom</a></li>
-
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
+        
+        
                 <!---------------******mobile drop down**********************************------------------->
             </ul>
             <footer class="site-footer">
@@ -145,19 +146,19 @@
                         <p class="showcase-subtitle">A collection of my best work.</p>
                         <div class="projects-list">
                             <div class="project-item">
-                                <img src="images/project1.jpg" alt="Project 1">
+                                <img src="{% static 'chatapp/images/project1.jpg' %}" alt="Project 1" >
                             </div>
                             <div class="project-item">
-                                <img src="images/project2.jpg" alt="Project 2">
+                                <img src="{% static 'chatapp/images/project2.jpg' %}" alt="Project 2" >
                             </div>
                             <div class="project-item">
-                                <img src="images/project3.jpg" alt="Project 3">
+                                <img src="{% static 'chatapp/images/project3.jpg' %}" alt="Project 3" >
                             </div>
                             <div class="project-item">
-                                <img src="images/project4.jpg" alt="Project 4">
+                                <img src="{% static 'chatapp/images/project4.jpg' %}" alt="Project 4" >
                             </div>
                             <div class="project-item">
-                                <img src="images/project5.jpg" alt="Project 5">
+                                <img src="{% static 'chatapp/images/project5.jpg' %}" alt="Project 5" >
                             </div>
                         </div>
                     </div>
@@ -169,19 +170,19 @@
                             <p class="showcase-subtitle">About me and Who i'm am</p>
                             <div class="about-gallery">
                                 <div class="about-item">
-                                    <img src="images/About1.jpg" alt="About 1">
+                                    <img src="{% static 'chatapp/images/About1.jpg' %}" alt="About 1" >
                                 </div>
                                 <div class="about-item">
-                                    <img src="images/about2.jpg" alt="About 2">
+                                    <img src="{% static 'chatapp/images/about2.jpg' %}" alt="About 2" >
                                 </div>
                                 <div class="about-item">
-                                    <img src="images/About6.jpg" alt="About 3">
+                                    <img src="{% static 'chatapp/images/About6.jpg' %}" alt="About 3" >
                                 </div>
                                 <div class="about-item">
-                                    <img src="images/profile.png" alt="About 4">
+                                    <img src="{% static 'chatapp/images/About4.png' %}" alt="About 4" >
                                 </div>
                                 <div class="about-item">
-                                    <img src="images/About4.png" alt="About 5">
+                                    <img src="{% static 'chatapp/images/profile.png' %}" alt="About 5" >
                                 </div>
                             </div>
                         </div>
@@ -263,10 +264,10 @@
                         </div>
                         <div class="achievements-gallery">
                             <div class="achievement-item">
-                                <img src="images/achievement2.png" alt="Achievement 1">
+                                <img src="{% static 'chatapp/images/achievement2.png' %}" alt="Achievement1" >
                             </div>
                             <div class="achievement-item">
-                                <img src="images/Achievements1.png" alt="Achievement 2">
+                                <img src="{% static 'chatapp/images/Achievement1.png' %}" alt="Achievement2" >
                             </div>
                             <!-- <div class="achievement-item">
                                 <img src="images/achievement3.jpg" alt="Achievement 3">
