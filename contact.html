@@ -121,13 +121,57 @@
                     <img src="https://img.icons8.com/fluency/48/tiktok.png" alt="TikTok logo" class="social-logo">
                 </div>
             </div>
+
+            
             
 
         </section>
-
+<hr class="line">
+            
+            <p class="message-title">or send me a message</p>
+            
+            <div class="chat-gaba">
+                <form id="contactForm">
+                    <input type="text" placeholder="Name" name="name" id="name" required>
+                    <input type="email" placeholder="Email" name="email" id="email" required>
+                    <textarea name="message" id="message" placeholder="Write your message..." required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <p id="statusMessage"></p>
+            </div>
     </main>
 
     <script src="config.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const statusMessage = document.getElementById("statusMessage");
+
+            try {
+                const response = await fetch("/send-message/", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    statusMessage.style.color = "green";
+                    statusMessage.textContent = "✅ " + data.message;
+                    this.reset();
+                } else {
+                    statusMessage.style.color = "red";
+                    statusMessage.textContent = "❌ " + (data.error || "Network error");
+                }
+            } catch (error) {
+                statusMessage.style.color = "red";
+                statusMessage.textContent = "❌ Network error. Try again.";
+                console.error(error);
+            }
+        });
+</script>
 </body>
 
 </html>
