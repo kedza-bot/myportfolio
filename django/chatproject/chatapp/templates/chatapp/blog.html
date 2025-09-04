@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kelvin || blog</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -26,13 +27,13 @@
         </div>
         <nav>
             <ul class="nav-menu">
-                <li><i class="fa-solid fa-house nav-icons"></i><a href="index.html">Home</a></li>
-                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="about-me.html">About</a></li>
-                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="achievements.html">Achievements</a></li>
-                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="projects.html">Projects</a></li>
-                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="contact.html">Contact</a></li>
-                <li><i class="fa-solid fa-blog nav-icons"></i><a href="blog.html">Blog</a></li>
-                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="chat-room.html">Chatroom</a></li>
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
             </ul>
             <!---------------******mobile drop down**********************************------------------->
             <ul class="mobile-container">

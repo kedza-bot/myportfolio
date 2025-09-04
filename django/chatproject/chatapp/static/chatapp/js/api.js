@@ -1,19 +1,6 @@
 let currentUser = null;
 let replyTo = null; // store reply target
 
-function loginWithGoogle() {
-    // Simulate authentication
-    currentUser = "GoogleUser";
-    document.getElementById("auth-buttons").style.display = "none";
-    document.getElementById("chat-container").style.display = "flex";
-}
-
-function loginWithGithub() {
-    currentUser = "GithubUser";
-    document.getElementById("auth-buttons").style.display = "none";
-    document.getElementById("chat-container").style.display = "flex";
-}
-
 function replyMessage(msgId, author) {
     replyTo = msgId;
     let input = document.getElementById("message-input");
@@ -51,13 +38,12 @@ async function sendMessage() {
     let res = await fetch('/api/send/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            // 'Authorization': 'Bearer ' + token
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({content, reply_to: replyTo})
     });
 
-    if(res.ok){
+    if (res.ok) {
         input.value = "";
         input.placeholder = "Type a message...";
         replyTo = null;
@@ -65,4 +51,16 @@ async function sendMessage() {
     }
 }
 
+async function getCurrentUser() {
+    let res = await fetch('/api/current_user/');
+    let data = await res.json();
+    currentUser = data.username;
+    if (currentUser) {
+        document.getElementById("auth-buttons").style.display = "none";
+        document.getElementById("chat-container").style.display = "flex";
+        loadMessages();
+    }
+}
+
+getCurrentUser();
 setInterval(loadMessages, 3000);

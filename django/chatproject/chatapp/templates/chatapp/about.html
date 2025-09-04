@@ -25,13 +25,13 @@
         </div>
         <nav>
             <ul class="nav-menu">
-                <li><i class="fa-solid fa-house nav-icons"></i><a href="index.html">Home</a></li>
-                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="about-me.html">About</a></li>
-                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="achievements.html">Achievements</a></li>
-                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="projects.html">Projects</a></li>
-                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="contact.html">Contact</a></li>
-                <li><i class="fa-solid fa-blog nav-icons"></i><a href="blog.html">Blog</a></li>
-                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="chat-room.html">Chatroom</a></li>
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
 
                 <!---------------******mobile drop down**********************************------------------->
                 
@@ -84,7 +84,7 @@
                 <!-----------*********************************Alison*************------------------>
                     <div class="career-item">
                         <div class="career-flex">
-                            <img src="images/alison-logo.svg" alt="freecodeCamp- logo">
+                            <img src="{% static 'chatapp/images/alison-logo.svg' %}" alt="alison-logo" >
                             <div class="item-text">
                                 <p class="career-item-head">Graphic Design and Visuals</p>
                                 <p class="career-name">ALISON</p>
@@ -111,7 +111,7 @@
 
                     <div class="career-item">
                         <div class="career-flex">
-                            <img src="images/fnb-app-accademy-logo.png" alt="fnblogo">
+                            <img src="{% static 'chatapp/images/fnb-app-accademy-logo.png' %}" alt="fnblogo">
                             <div class="item-text">
                                 <p class="career-item-head">Full Stack Developer</p>
                                 <p class="career-name">FNB App Academy</p>
@@ -136,7 +136,7 @@
                     <!------------------------------------------------*****************freecodeCamp*************------>
                     <div class="career-item">
                         <div class="career-flex">
-                            <img src="images/freecodecamp.webp" alt="freecodeCamp- logo">
+                            <img src="{% static 'chatapp/images/freecodecamp.webp' %}" alt="freecodeCamp- logo">
                             <div class="item-text">
                                 <p class="career-item-head">Responsive Web Development</p>
                                 <p class="career-name">FREE-CODE-CAMP</p>
@@ -187,7 +187,7 @@
                     </div>
                 </div>
                 <div class="edu-container">
-                    <img src="images/school.jpg" alt="school-logo">
+                    <img src="{% static 'chatapp/images/school.jpg' %}" alt="school-logo">
                     <div>
                         <p class="School-name">Nyamasanga Secondary School</p>
                         <p class="level-of-education">O'level</p>

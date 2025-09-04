@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Chat App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
 </head>
 
@@ -26,13 +26,13 @@
         </div>
         <nav>
             <ul class="nav-menu">
-                <li><i class="fa-solid fa-house nav-icons"></i><a href="index.html">Home</a></li>
-                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="about-me.html">About</a></li>
-                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="achievements.html">Achievements</a></li>
-                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="projects.html">Projects</a></li>
-                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="contact.html">Contact</a></li>
-                <li><i class="fa-solid fa-blog nav-icons"></i><a href="blog.html">Blog</a></li>
-                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="chat-room.html">Chatroom</a></li>
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-regular fa-trophy nav-icons"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
             </ul>
             <!---------------******mobile drop down**********************************------------------->
             <ul class="mobile-container">
@@ -211,9 +211,10 @@
     
         <!-- Auth Buttons -->
         <div class="auth-buttons" id="auth-buttons">
-            <button onclick="loginWithGoogle()">Sign in with Google</button>
-            <button onclick="loginWithGithub()">Sign in with Github</button>
+          <a href="/accounts/google/login/"><button>Sign in with Google</button></a>
+          <a href="/accounts/github/login/"><button>Sign in with Github</button></a>
         </div>
+
     
         <!-- Chat Container -->
         <div class="chat-container" id="chat-container" style="display:none;">
@@ -229,8 +230,8 @@
         </div>
     </section>
 
-    <script src="app.js"></script>
-    <script src="config.js"></script>
+    <script src="{% static 'chatapp/js/api.js' %}"></script>
+    <script src="{% static 'chatapp/js/config.js' %}"></script>
 </body>
 
 </html>
