@@ -135,3 +135,20 @@ ACCOUNT_AUTHENTICATION_METHOD = "username"  # simple login
 # Default primary key field type
 # ------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#-------------------------------
+#email hadler
+#-------------------------------
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-relay.brevo.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("BREVO_SMTP_USER")
+EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_KEY")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
+CONTACT_RECIPIENT = os.getenv("CONTACT_RECIPIENT", EMAIL_HOST_USER)

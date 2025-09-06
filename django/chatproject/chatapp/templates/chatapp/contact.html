@@ -15,7 +15,7 @@
         <div class="profile-picture"></div>
         <div class="name-badge">
             <h2 class="profile-name">Kelvin Ngwenya</h2>
-            <img src="images/verified-badge-svgrepo-com.svg" alt="background" class="verified">
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
             <p class="verified-text">Verified</p>
         </div>
         <p class="profile-tag">@mrafrica</p>
@@ -76,7 +76,7 @@
                         <p class="card-text">Let's Connect</p>
                         <p class="card-text">Connect with me professionally.</p>
                     </div>
-                    <a href="https://www.linkedin.com/in/kedza-ngwenya-477140252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-btn">Go to LinkedIn</a>
+                    <a href="www.linkedin.com/in/kedza-ngwenya" target="_blank" class="social-btn">Go to LinkedIn</a>
                     <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn logo" class="social-logo">
                 </div>
             
@@ -103,57 +103,85 @@
                     <img src="https://img.icons8.com/fluency/48/tiktok.png" alt="TikTok logo" class="social-logo">
                 </div>
             </div>
-
-            
-            
-
         </section>
 <hr class="line">
-            
-            <p class="message-title">or send me a message</p>
-            
-            <div class="chat-gaba">
-                <form id="contactForm">
-                    <input type="text" placeholder="Name" name="name" id="name" required>
-                    <input type="email" placeholder="Email" name="email" id="email" required>
-                    <textarea name="message" id="message" placeholder="Write your message..." required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-                <p id="statusMessage"></p>
-            </div>
-    </main>
 
-    <script src="{% static 'chatapp/js/config.js' %}"></script>
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+<p class="message-title">Or send me a message</p>
+
+<div class="chat-gaba">
+    <form id="contactForm" method="post" action="{% url 'contact_submit' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Name" name="name" id="name" required>
+        <input type="email" placeholder="Email" name="email" id="email" required>
+        <textarea name="message" id="message" placeholder="Write your message..." required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="statusMessage"></p>
+</div>
+
+<script>
+    // CSRF token helper
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return null;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const statusMessage = document.getElementById("statusMessage");
+
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
-
-            const formData = new FormData(this);
-            const statusMessage = document.getElementById("statusMessage");
+            const formData = new FormData(form);
 
             try {
                 const response = await fetch("/send-message/", {
                     method: "POST",
+                    headers: { "X-CSRFToken": getCookie("csrftoken") },
                     body: formData,
                 });
 
                 const data = await response.json();
 
-                if (data.success) {
+                if (response.ok && data.success) {
                     statusMessage.style.color = "green";
                     statusMessage.textContent = "✅ " + data.message;
-                    this.reset();
+                    form.reset();
+
+                    // Auto-clear message after 4 seconds
+                    setTimeout(() => {
+                        statusMessage.textContent = "";
+                    }, 4000);
                 } else {
                     statusMessage.style.color = "red";
-                    statusMessage.textContent = "❌ " + (data.error || "Network error");
+                    statusMessage.textContent =
+                        "❌ " + (data.error || "Something went wrong");
+
+                    // Auto-clear error after 6 seconds
+                    setTimeout(() => {
+                        statusMessage.textContent = "";
+                    }, 6000);
                 }
             } catch (error) {
                 statusMessage.style.color = "red";
                 statusMessage.textContent = "❌ Network error. Try again.";
-                console.error(error);
+                console.error("Error sending message:", error);
+
+                setTimeout(() => {
+                    statusMessage.textContent = "";
+                }, 6000);
             }
         });
+    });
 </script>
+
+
+
+
+<script src="{% static 'chatapp/js/config.js' %}"></script>
+
 </body>
 
 </html>

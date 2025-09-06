@@ -18,3 +18,16 @@ class Message(models.Model):
     @property
     def author_name(self):
         return self.author.get_full_name() or self.author.username
+    
+    
+    from django.db import models
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.name} ({self.email})"
+
