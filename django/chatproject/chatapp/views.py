@@ -50,11 +50,27 @@ def get_messages(request):
 @permission_classes([IsAuthenticated])
 def send_message(request):
     content = request.data.get('content')
+    reply_to_id = request.data.get('reply_to')  # get the reply_to ID from the request
+    reply_to_msg = None
+
+    if reply_to_id:
+        try:
+            reply_to_msg = Message.objects.get(id=reply_to_id)
+        except Message.DoesNotExist:
+            reply_to_msg = None  # ignore if not found
+
     if content:
-        msg = Message.objects.create(author=request.user, content=content)
+        msg = Message.objects.create(
+            author=request.user,
+            content=content,
+            reply_to=reply_to_msg
+        )
         serializer = MessageSerializer(msg)
         return Response(serializer.data, status=201)
+
     return Response({"error": "Content required"}, status=400)
+
+
 
 
 # --------------------------
