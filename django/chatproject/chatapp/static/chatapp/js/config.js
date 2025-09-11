@@ -41,3 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.classList.add("active");
     }
 });
+
+
+
+/* mobile animations*/ 
+const sidebar = document.getElementById("sidebar");
+  const sidebarItems = document.querySelectorAll(".sidebar-icons li");
+
+  // Expand on first click
+  sidebarItems.forEach(item => {
+    item.addEventListener("click", () => {
+      if (!sidebar.classList.contains("expanded")) {
+        // expand if collapsed
+        sidebar.classList.add("expanded");
+      } else {
+        // if already expanded and user clicked → collapse again
+        sidebar.classList.remove("expanded");
+      }
+    });
+  });

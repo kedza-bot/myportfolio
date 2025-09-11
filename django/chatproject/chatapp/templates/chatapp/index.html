@@ -16,7 +16,7 @@
         <div class="profile-picture"></div>
         <div class="name-badge">
             <h2 class="profile-name">Kelvin Ngwenya</h2>
-            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}" alt="background" class="verified">
             <p class="verified-text">Verified</p>
         </div>
         <p class="profile-tag">@mrafrica</p>
@@ -34,23 +34,48 @@
                 <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
                 <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
                 <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
-        
-        
+    
+    
                 <!---------------******mobile drop down**********************************------------------->
             </ul>
-            <footer class="site-footer">
-                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
-            </footer>
+            <!-- Mobile Hamburger -->
+            <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-picture small"></div>
+            <div class="profile-info">
+                <h3 class="profile-name">Kelvin Ngwenya 
+                    <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                </h3>
+                <p class="profile-tag">@mrafrica</p>
+            </div>
+        </div>
 
+        <!-- Nav Icons -->
+        <ul class="sidebar-icons">
+            <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text">Home</span></li>
+            <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text">About</span></li>
+            <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text">Achievements</span></li>
+            <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text">Projects</span></li>
+            <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text">Contact</span></li>
+            <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text">Blog</span></li>
+            <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text">Chatroom</span></li>
+        </ul>
+    </div>
+            
         </nav>
+        <!-- <footer class="site-footer">
+                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+            </footer> -->
     </header>
     <!---************** Main Content Section ***************------------------->
     <main>
         <!----------*******************home section**********-->
         <section id="home">
             <h1 class="home-greeting">Hi, I'm Kedza Ngwenya</h1>
-            <p class="home-location"><span class="dot">.</span>Based in Johannesburg, South Africa<span
-                    class="dot">.</span></p>
+            <p class="home-location"><span class="dot">•</span>Based in Johannesburg, South Africa<span
+                    class="dot">•</span></p>
             <p>Passionate and expirienced Web Developer specializing in frontend and back-end .
                 Proficiant in HTML, CSS, JavaScript, and Python with a strong focus on creating responsive and
                 user-friendly web applications.
@@ -135,7 +160,7 @@
 
             <section class="featured-section">
                 <div>
-                    <img class="img-icon" src="images/fetured-section.svg" alt="featured-section">
+                    <img src="{% static 'chatapp/images/fetured-section.svg' %}"alt="featured-section" class="img-icon" >
                     <p class="featured-heading">Featured Section</p>
                 </div>
                 <p class="featured-subtitle">Explore my featured projects and achievements.</p>

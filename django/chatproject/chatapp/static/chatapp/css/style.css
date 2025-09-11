@@ -481,6 +481,7 @@ hr {
   width: 35px;
   height: 35px;
   position: absolute;
+  filter: invert(38%) sepia(91%) saturate(2000%) hue-rotate(190deg) brightness(95%) contrast(90%);
 }
 
 .featured-heading{
@@ -1609,7 +1610,7 @@ a.social-btn:hover {
   border-radius: 8px;
   outline: none;
   font-size: 0.95rem;
-  color: #333;
+  color: var(--headings30-2);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -1672,24 +1673,484 @@ a.social-btn:hover {
 
 
 
-
 /* Hide mobile menu by default (desktop screens) */
 .mobile-dropdown,
 .mobile-dropdown-links {
     display: none;
 }
 
-/* Show only on small screens */
-@media (max-width: 768px) {
-    .mobile-dropdown {
-        display: block;
-        /* hamburger icon */
-    }
 
-    .mobile-dropdown-links {
-        display: none;
-        /* keep links hidden until clicked */
-    }
+/*mobile css */
+/* Hide mobile menu on big screens */
+.sidebar {
+  display: none;
+}
+    /*------------------- Mobile Header -------------------*/
+/*------------------- Mobile Specific -------------------*/
+@media (max-width: 768px) {
+  /* Hide desktop elements on small screens */
+  .nav-menu,
+  .themes,
+  .profile-picture,
+  .name-badge,
+  .profile-tag {
+    display: none;
+  }
+
+header{
+    position: fixed;
+    z-index: 9999;
+  }
+
+  /* Sidebar Base */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px; /* collapsed state */
+  height: 100%;
+  background: #111;
+  color: #fff;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 9999;
+  display: block;
+}
+
+.sidebar.expanded {
+  width: 220px; /* expanded state */
+}
+
+/* Profile Section */
+.profile-section {
+  text-align: center;
+  padding: 15px 10px;
+}
+
+.profile-picture.small {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #444; /* placeholder */
+  background-image: url("/static/chatapp/images/profile.png");
+  background-size: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+.profile-info {
+  margin-top: 10px;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.profile-name img.verified {
+  width: 14px;
+  height: 14px;
+}
+
+.profile-tag {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+/* Sidebar Icons */
+.sidebar-icons {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.sidebar-icons li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar-icons li:hover {
+  background: #222;
+}
+
+.sidebar-icons li i {
+  font-size: 20px;
+  min-width: 25px;
+}
+
+/* Hide text when collapsed */
+.sidebar .link-text {
+  display: none;
+  white-space: nowrap;
+}
+
+.sidebar.expanded .link-text {
+  display: inline;
+}
+
+
+/* Skills grid */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Each skill item */
+.skill {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  perspective: 1000px;
+}
+
+.skill-bg-shape {
+    position: absolute;
+    z-index: 1; /* fine, but the transform may create a new stacking context */
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .skills {
+    justify-content: center; /* center on small screens */
+    gap: 1rem; /* reduce spacing */
+  }
+
+  .skill {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill img {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+
+  .skill-text {
+    font-size: 0.7rem;
+    bottom: 5px;
+  }
+}
+
+
+
+
+/*===============================grid shocase========================*/
+#home{
+  width:80%;
+  position: relative;
+  z-index: 1;
+}
+.show-case-container {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 1.5rem;
+  }
+
+  .show-projects,
+  .show-about,
+  .show-skills {
+    width: 100%;
+    height: auto; /* let them grow naturally */
+    min-height: 350px;
+  }
+
+  /* Make projects column stack internally too */
+  .show-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .projects-list {
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .show-about {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .show-skills {
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /*======================================feature 2 =====================*/
+  /* Stack the three panels */
+  .show-case-container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Make each block full-width, flexible height */
+  .show-achievements,
+  .show-chatroom,
+  .show-services {
+    width: 100%;
+    height: auto;
+    min-height: 300px; /* adjust as needed */
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  /* -------- Achievements adjustments -------- */
+  .achievements-gallery {
+    position: relative;
+    height: auto;
+    min-height: 120px;
+    margin-top: 0.75rem;
+  }
+
+  /* smaller stacked images */
+  .achievement-item {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    transform: translateX(0) rotate(var(--angle, 0deg));
+    transition: transform 0.3s, z-index 0.3s;
+  }
+  .achievement-item img {
+    width: 140px;       /* smaller on mobile */
+    max-width: 48%;
+    border-radius: 6px;
+  }
+  /* soften the rotation on mobile */
+  .achievement-item:nth-child(odd) { --angle: -4deg; }
+  .achievement-item:nth-child(even) { --angle: 4deg; }
+  .achievement-item:nth-child(3n) { --angle: 6deg; }
+
+  /* -------- Chatroom adjustments -------- */
+  .show-chatroom {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  .show-chatroom::-webkit-scrollbar { display: none; }
+  .show-chatroom { scrollbar-width: none; }
+
+  .show-chatroom .chat-text i {
+    font-size: 28px; /* smaller icon */
+    margin-bottom: 0.35rem;
+  }
+  .show-chatroom .chat-text p:first-of-type {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+  }
+  .show-chatroom .showcase-subtitle {
+    font-size: 0.82rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .chatroom1, .chatroom2 {
+    max-width: 85%;
+    padding: 0.45rem 0.6rem;
+    margin: 0.4rem 0;
+    font-size: 0.88rem;
+    line-height: 1.2rem;
+    border-radius: 0.6rem;
+  }
+
+  /* -------- Services adjustments -------- */
+  .show-services {
+    display: flex;
+    flex-direction: column; /* stack left/right into vertical blocks */
+    gap: 0.75rem;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .show-services .chat-text i {
+    font-size: 36px; /* slightly smaller */
+    margin-bottom: 0.4rem;
+  }
+
+  .services-list {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .services-list::-webkit-scrollbar { display: none; }
+  .services-list { scrollbar-width: none; }
+
+  .services-bold {
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+  }
+  .services-bold.active {
+    font-size: 1rem;
+    font-weight: 700;
+    filter: blur(0);
+  }
+
+  /* Slight global downscaling for tight mobile space */
+  .featured-heading { font-size: 1.05rem; }
+  .featured-subtitle { font-size: 0.95rem; color: var(--color); }
+
+
+
+
+
+  /* About Section */
+  #about {
+    margin-left: 4rem; /* remove large left margin */
+    width: 80%;        /* make it full width minus small padding */
+    padding: 1rem;     /* reduce padding */
+  }
+
+  .about-heading {
+    font-size: 1.5rem; /* scale down headings */
+  }
+
+  .about-brief,
+  .about-welcome,
+  .about-paragraph {
+    font-size: 0.9rem; /* adjust text for smaller screens */
+    line-height: 1.4;
+  }
+
+  .about-sign {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Career Section */
+  .career-flex {
+    flex-direction: column; /* stack items vertically */
+    gap: 1.5rem;
+  }
+
+  .career-item {
+    padding: 1rem;
+  }
+
+  .career-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Education Section */
+  .edu-container {
+    flex-direction: column; /* stack image and text */
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .edu-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .School-name {
+    font-size: 1rem;
+  }
+
+  .level-of-education,
+  .year .location {
+    font-size: 0.8rem;
+  }
+
+  /* Downloads */
+  .downloads {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .portfolio-download {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+
+
+
+  /* ================== Mobile Styles for Achievements ================== */
+  /* Main container adjustments */
+  .cert-container {
+/* shift from left */
+          /* add spacing */
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Each certificate item */
+  .cert-item {
+    width: 100%;   /* take full container width */
+    max-width: 320px; /* prevent too wide */
+    height: auto;  /* let height adjust */
+  }
+
+  /* Image and text */
+  .cert-item img {
+    height: 180px; /* fixed smaller height */
+  }
+
+  .cert-item .text {
+    padding: 1rem;
+    text-align: center; /* better readability on mobile */
+  }
+
+  .certficate-description {
+    font-size: 14px;
+  }
+
+  .academy {
+    font-size: 12px;
+  }
+
+  .issued-title,
+  .year-of-issued {
+    font-size: 12px;
+  }
+
+  /* Subheader (search + filters) */
+  .subheader {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+    padding: 10px 15px;
+  }
+
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .subheader select {
+    width: 100%;
+  }
+
+  .subheader .total {
+    position: static; /* remove absolute */
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+  }
 
 }
 
