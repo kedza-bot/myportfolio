@@ -1032,6 +1032,143 @@ hr {
   pointer-events: none;
 }
 
+
+
+/*==========================================contact===============================*/
+.chat-room { position: fixed; top: 0; left: 17rem; width: 100%; padding: 1rem; border-radius: 12px; } 
+        .chat-heading { margin: 0; font-size: 1.5rem; } 
+        .chat-brief { margin: 0.5rem 0; font-size: 0.9rem; color: #333; } 
+        .about-line { border: none; height: 1px; background: #999; margin-top: 10px; }
+
+/* Auth Buttons */
+.auth-buttons {
+  text-align: center;
+  margin: 100px 20px 20px 20px;
+}
+
+.auth-buttons button {
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #a5d6a7; /* light green */
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-buttons button:nth-child(2) {
+  background: #81c784; /* slightly darker green */
+}
+
+/* Chat Container */
+.chat-container {
+  width: 93%;
+  margin: 120px auto 20px auto; /* below the fixed header */
+  background: #ffffff; /* white */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
+
+/* Chat Box */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f9f9f9; /* light grey */
+}
+
+/* Message Styles */
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.message.sent {
+  background: #c8e6c9; /* soft light green */
+  margin-left: auto;
+  color: #2e7d32; /* dark green text */
+}
+
+.message.received {
+  background: #e0e0e0; /* soft grey */
+  margin-right: auto;
+  color: #333; /* dark grey text */
+}
+
+.message small {
+  display: block;
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Reply Button */
+.reply-btn {
+  font-size: 0.8rem;
+  color: #2e7d32; /* green accent */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.reply-btn i {
+  margin-right: 4px;
+  font-style: normal; /* keep icon simple */
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #f9f9f9; /* light grey input */
+}
+
+.chat-input button {
+  padding: 15px 20px;
+  border: none;
+  background: #81c784; /* light green */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-input button:hover {
+  background: #66bb6a; /* darker green on hover */
+}
+
+.reply-context {
+  background: #f1f1f1; /* soft grey */
+  border-left: 3px solid #81c784; /* green accent */
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #444;
+  border-radius: 5px;
+}
+
+
+
+
 /* show shine on hover */
 .career-item:hover::before {
   opacity: 1;
@@ -1700,6 +1837,7 @@ a.social-btn:hover {
 header{
     position: fixed;
     z-index: 9999;
+    background: none;
   }
 
   /* Sidebar Base */
@@ -2152,5 +2290,182 @@ header{
     text-align: center;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  /* Contact heading + brief */
+  .contact-heading,
+  .contact-brief {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Dotted line */
+  .contact-line {
+    width: 100%;
+    margin: 15px auto;
+  }
+
+  /* Gmail container */
+  .gmail-container {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .gmail-btn {
+    width: auto;
+    padding: 8px 16px;
+    margin: 15px auto 0;
+    display: inline-block;
+  }
+
+  .gmail-logo {
+    right: 15px;
+    top: auto;
+    bottom: 15px;
+    width: 45px;
+  }
+
+  .gmail-watermark {
+    width: 180px;
+    left: -30px;
+  }
+
+  /* Social section */
+  .gaba {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .social-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .social-logo {
+    width: 40px;
+    right: 10px;
+    top: 10px;
+  }
+
+  /* Separator line */
+  .line {
+    width: 100%;
+  }
+
+  /* Email/contact form */
+  .message-title {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .chat-gaba {
+    width: 70%;         /* take more space on mobile */     
+    padding: 12px;
+    margin-left: 5rem;
+  }
+
+  .chat-gaba input {
+    min-width: 100%; /* stack inputs full width */
+  }
+
+  .chat-gaba textarea {
+    min-height: 100px;
+  }
+
+  .chat-gaba button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+
+
+
+
+
+  
+/*===========================================chatroom=========================*/
+/* Chat room wrapper */
+  .chat-room {
+    position: fixed;
+    top: 0;
+    left: 0;        /* no sidebar offset */
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0; /* cleaner edge-to-edge on mobile */
+  }
+
+  /* Headings */
+  .chat-heading {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-left: 50px;
+  }
+
+  .chat-brief {
+    font-size: 0.8rem;
+    text-align: center;
+    padding-left: 58px;
+  }
+
+  /* Container */
+  .chat-container {
+    position: fixed;
+    width: 100%;
+    margin: 110px auto 0 auto; /* adjust for fixed header */
+    height: 90vh; /* slightly smaller for mobile */
+    border-radius: 8px;
+    left: 3%;
+  }
+
+  /* Chat box */
+  .chat-box {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Messages */
+  .message {
+    max-width: 65%; /* allow more space */
+    font-size: 0.85rem;
+  }
+
+  .message small {
+    font-size: 0.65rem;
+  }
+
+  /* Chat input */
+  .chat-input input {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .chat-input button {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Reply context */
+  .reply-context {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+  
 }
 

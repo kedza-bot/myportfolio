@@ -50,14 +50,13 @@
             
                 <!-- Nav Icons -->
                 <ul class="sidebar-icons">
-                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text">Home</span></li>
-                    <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text">About</span></li>
-                    <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text">Achievements</span>
-                    </li>
-                    <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text">Projects</span></li>
-                    <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text">Contact</span></li>
-                    <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text">Blog</span></li>
-                    <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text">Chatroom</span></li>
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a> </span></li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
                 </ul>
             </div>
             <!-- <footer class="site-footer">
@@ -100,17 +99,17 @@
                 </div>
 
                 <div class="cert-item" data-category="graphic">
-                    <img src="{% static 'chatapp/images/Achievements1.png' %}" alt="alison-certificate">
+                    <img src="{% static 'chatapp/images/keyconnect.jpeg' %}" alt="alison-certificate">
                     <div class="text">
-                        <p class="certficate-description">Graphic and Visuals</p>
-                        <p class="academy">Alison</p>
-                        <p class="issued-title">Issued on</p>
-                        <p class="year-of-issued">july-2024</p>
+                        <p class="certficate-description">Keyconnect</p>
+                        <p class="academy">created by Kedza using (Html, Css, Javasript and Django framework)</p>
+                        <p class="issued-title"><a href="https://key-connect.onrender.com/">click here to view</a></p>
+                        <p class="year-of-issued">2025</p>
                     </div>
                 </div>
 
                 <div class="cert-item" data-category="web">
-                    <img src="{% static 'chatapp/images/Achievements3.png' %}" alt="coming soon">
+                    <img src="{% static 'chatapp/images/.png' %}" alt="coming soon">
                     <div class="text">
                         <p class="certficate-description">Full stack developer</p>
                         <p class="academy">Free Code Camp</p>
