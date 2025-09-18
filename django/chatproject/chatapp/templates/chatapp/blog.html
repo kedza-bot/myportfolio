@@ -36,42 +36,43 @@
                 <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
             </ul>
             <!---------------******mobile drop down**********************************------------------->
-            <ul class="mobile-container">
-                <li class="mobile-dropdown">
-                    <div class="dropdown-bars">
-                        <span class="horizontal-bars"></span>
-                        <span class="horizontal-bars"></span>
-                        <span class="horizontal-bars"></span>
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
                     </div>
-                </li>
-                <li class="mobile-dropdown-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#resume">Resume</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#chatroom">Chatroom</a>
-                </li>
-            </ul>
-            <footer class="site-footer">
-                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
-            </footer>
+                </div>
+            
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a></span></li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                </ul>
+                <span class="link-text">
+                    <footer class="site-footer">
+                        <p>&copy; 2025 Kedza Ngwenya.<br/> All rights reserved.</p>
+                    </footer>
+                </span>
+            </div>
+            
 
         </nav>
     </header>
     <main>
-        <h1 style="font-size: 3.25rem;
-    line-height: 1.7rem;
-    color:var(--headings30-2);
-    font-weight: 900;
-    font-family: var(--font-family);
-    text-align: center; 
-    position: 
-    absolute; 
-    top: 50%;
-    left: 50%; ">Coming Soon</h1>
+        <h1 class="blog">Coming Soon</h1>
     </main>
+    
     <script src="{% static 'chatapp/js/config.js' %}"></script>
     
 </body>
