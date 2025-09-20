@@ -2476,6 +2476,45 @@ header{
     position: absolute; 
     top: 50%;
     left: 50%;}
+
+
+    .themess {
+  position: fixed;
+  top: 70%;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 60px;
+  height: 60px;
+
+  background: rgba(255, 255, 255, 0.1); /* frosted glass */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Make icons look cleaner */
+.themess i {
+  font-size: 1.4rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.themess i:hover {
+  transform: scale(1.1);
+  color: #ffd369; /* soft highlight */
+}
+
   
 }
 .blog{

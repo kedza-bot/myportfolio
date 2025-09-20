@@ -1,46 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
-    const lightBtn = document.getElementById("toggle-light");
-    const darkBtn = document.getElementById("toggle-dark");
+    const lightBtns = document.querySelectorAll("#toggle-light");
+    const darkBtns = document.querySelectorAll("#toggle-dark");
 
     // --- Load saved preference ---
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
         body.classList.add("dark-mode");
-        setActive(darkBtn);
+        setActive("dark");
     } else if (savedTheme === "light") {
         body.classList.remove("dark-mode");
-        setActive(lightBtn);
+        setActive("light");
     } else {
         // Detect system preference if no saved theme
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             body.classList.add("dark-mode");
-            setActive(darkBtn);
+            setActive("dark");
         } else {
             body.classList.remove("dark-mode");
-            setActive(lightBtn);
+            setActive("light");
         }
     }
 
-    // --- Manual toggle ---
-    darkBtn.addEventListener("click", () => {
-        body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-        setActive(darkBtn);
+    // --- Manual toggle for ALL icons ---
+    darkBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            setActive("dark");
+        });
     });
 
-    lightBtn.addEventListener("click", () => {
-        body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
-        setActive(lightBtn);
+    lightBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+            setActive("light");
+        });
     });
 
-    // --- Helper function ---
-    function setActive(icon) {
-        document.querySelectorAll(".themes i").forEach(i => i.classList.remove("active"));
-        icon.classList.add("active");
+    // --- Helper function (syncs desktop + mobile icons) ---
+    function setActive(mode) {
+        document.querySelectorAll("#toggle-light, #toggle-dark").forEach(i =>
+            i.classList.remove("active")
+        );
+        if (mode === "dark") {
+            darkBtns.forEach(i => i.classList.add("active"));
+        } else {
+            lightBtns.forEach(i => i.classList.add("active"));
+        }
     }
 });
+
 
 
 

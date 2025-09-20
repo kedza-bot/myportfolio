@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
-    <title>Kelvin || Achievements</title>
+    <title>Kelvin || Project</title>
 </head>
 <body>
     <header>
@@ -35,7 +35,6 @@
             </ul>
             <!---------------******mobile drop down**********************************------------------->
             <!-- Mobile Hamburger -->
-            <!-- Sidebar Navigation -->
             <div class="sidebar" id="sidebar">
                 <!-- Profile Section -->
                 <div class="profile-section">
@@ -50,6 +49,12 @@
             
                 <!-- Nav Icons -->
                 <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+
                     <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
                 <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
                 <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
@@ -64,9 +69,9 @@
                 </span>
                 </ul>
             </div>
-            <!-- <footer class="site-footer">
-                            <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
-                        </footer> -->
+            <footer class="site-footer">
+                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+            </footer>
             
             </nav>
     </header>
@@ -108,22 +113,26 @@
                     <div class="text">
                         <p class="certficate-description">Keyconnect</p>
                         <p class="academy">created by Kedza using (Html, Css, Javasript and Django framework)</p>
-                        <p class="issued-title"><a href="https://key-connect.onrender.com/">click here to view</a></p>
+                        <p class="issued-title"><a href="https://key-connect.onrender.com/" target="_blank">click here to view</a></p>
                         <p class="year-of-issued">2025</p>
                     </div>
                 </div>
 
                 <div class="cert-item" data-category="web">
-                    <img src="{% static 'chatapp/images/portifolio.png' %}" alt="coming soon">
+                    <img src="{% static 'chatapp/images/Quizy.png' %}" alt="coming soon">
                     <div class="text">
-                        <p class="certficate-description">Full stack developer</p>
-                        <p class="academy">Free Code Camp</p>
-                        <p class="issued-title">Issued on</p>
-                        <p class="year-of-issued">current-2025</p>
+                        <p class="certficate-description">First Project</p>
+                        <p class="academy">Quiz static web made with Html, Css ,and Java Script, hto help Studient to examain themselves befor the actual exam come </p>
+                        <p class="issued-title"><a href="https://kedza-bot.github.io/quiz/" target="_blank" >click here to view</a></p>
+                        <p class="year-of-issued">2025</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <footer class="site-footer">
+                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+            </footer>
     </main>
     
 

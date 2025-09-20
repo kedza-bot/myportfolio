@@ -1,0 +1,127 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In via Google or GitHub</title>
+  <style>
+    /* Full-page blue gradient background */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    /* Glass effect login box */
+    .login-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 360px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #e0e0e0;
+    }
+
+    form {
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .google-icon, .github-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .github-btn {
+      margin-top: 0.8rem;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .github-btn:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .extra-links {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Sign In</h1>
+    <p>Use your Google or GitHub account to sign in.</p>
+
+    <!-- Google login -->
+    <form method="post" action="{% provider_login_url 'google' process='login' %}">
+      {% csrf_token %}
+      <button type="submit">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+             alt="Google" class="google-icon">
+        Continue with Google
+      </button>
+    </form>
+
+    <!-- GitHub login -->
+    <form method="post" action="{% provider_login_url 'github' process='login' %}">
+      {% csrf_token %}
+      <button type="submit" class="github-btn">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+             alt="GitHub" class="github-icon">
+        Continue with GitHub
+      </button>
+    </form>
+
+    <div class="extra-links">
+      <p><a href="{% url 'account_login' %}">Back to default login</a></p>
+    </div>
+  </div>
+</body>
+</html>
