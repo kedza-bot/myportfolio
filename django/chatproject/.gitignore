@@ -1,0 +1,45 @@
+# =====================
+# Python cache
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.log
+
+# =====================
+# Virtual Environments
+# =====================
+.venv/
+env/
+venv/
+
+# =====================
+# Django
+# =====================
+*.sqlite3
+db.sqlite3
+/media/
+staticfiles/
+*.pot
+*.mo
+
+# =====================
+# IDE & Editors
+# =====================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =====================
+# OS Specific
+# =====================
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+
