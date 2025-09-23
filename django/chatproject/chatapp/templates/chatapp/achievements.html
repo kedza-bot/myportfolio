@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="kelvin Ngwenya | kedza Ngwenya | Mr africa  | Portfolio">
+    <meta name="description" content="Showcasing my projects in web development, design, and software engineering.">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kelvingwenya-portfolio.com/">
+    <meta property="og:title" content="kedza Ngwenya| kelvin Ngwenya| Mr africa | Portfolio">
+    <meta property="og:description"
+        content="Showcasing my projects in web development, design, and software engineering.">
+    <meta property="og:image"
+        content="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/486346725_687613853688134_1156458610048094690_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=HuCLcAP8FQYQ7kNvwGiqq9Z&_nc_oc=AdnGhK2SLGvWHqhpnoaZwiYAfEMSCl91xY0rSPfsFZ-buyEnhC03osn94_MxQg9RZts&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BK8OSQkrECA0UFC77ORkJA&oh=00_AfaM1EPilwJgSzswU79TnYwgrjhRczhSVra-PZe9AN5V7g&oe=68D8596D">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="Mr africa kedzamix picture a software engineer">
+    <meta property="twitter:url" content="https://kelvingwenya-portfolio.com/">
+    <meta property="twitter:title" content="kedza Ngwenya| kelvin Ngwenya| Mr africa | Portfolio">
+    <meta property="twitter:description"
+        content="Showcasing my projects in web development, design, and software engineering.">
+    <meta property="twitter:image"
+        content="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/486346725_687613853688134_1156458610048094690_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=HuCLcAP8FQYQ7kNvwGiqq9Z&_nc_oc=AdnGhK2SLGvWHqhpnoaZwiYAfEMSCl91xY0rSPfsFZ-buyEnhC03osn94_MxQg9RZts&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BK8OSQkrECA0UFC77ORkJA&oh=00_AfaM1EPilwJgSzswU79TnYwgrjhRczhSVra-PZe9AN5V7g&oe=68D8596D">
+
+    <!-- Browser Theme -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-TileColor" content="#0f172a">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
+
+
+
+
     <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
     <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
     <title>Kelvin || Achievements</title>
 </head>
+
 <body>
     <header>
         <!----------------------------*************** Profile Section***************------------------------------- -->
         <div class="profile-picture"></div>
         <div class="name-badge">
             <h2 class="profile-name">Kelvin Ngwenya</h2>
-            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}" alt="background" class="verified">
             <p class="verified-text">Verified</p>
         </div>
         <p class="profile-tag">@mrafrica</p>
@@ -36,69 +74,71 @@
             <!---------------******mobile drop down**********************************------------------->
             <!-- Mobile Hamburger -->
             <!-- Sidebar Navigation -->
-    <div class="sidebar" id="sidebar">
-        <!-- Profile Section -->
-        <div class="profile-section">
-            <div class="profile-picture small"></div>
-            <div class="profile-info">
-                <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
-                    <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
-                </h3>
-                <p class="profile-tag">@mrafrica</p>
-            </div>
-        </div>
-    
-        <!-- Nav Icons -->
-        <ul class="sidebar-icons">
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified"
+                                class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
+                    </div>
+                </div>
 
-            <div class="themess">
-                <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
-                <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a
+                                href="{% url 'chat_home' %}">Home</a></span></li>
+                    <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a
+                                href="{% url 'about' %}">About</a></span></li>
+                    <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a
+                                href="{% url 'achievements' %}">Achievements</a></span></li>
+                    <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a
+                                href="{% url 'projects' %}">Projects</a> </span></li>
+                    <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a
+                                href="{% url 'contact' %}">Contact</a></span></li>
+                    <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a
+                                href="{% url 'blog' %}">Blog</a></span></li>
+                    <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a
+                                href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                    <span class="link-text">
+                        <footer class="site-footer">
+                            <p>&copy; 2025 Kedza Ngwenya.<br /> All rights reserved.</p>
+                        </footer>
+                    </span>
+                </ul>
             </div>
 
-            <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a
-                        href="{% url 'chat_home' %}">Home</a></span></li>
-            <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a
-                        href="{% url 'about' %}">About</a></span></li>
-            <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a
-                        href="{% url 'achievements' %}">Achievements</a></span></li>
-            <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a
-                        href="{% url 'projects' %}">Projects</a> </span></li>
-            <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a
-                        href="{% url 'contact' %}">Contact</a></span></li>
-            <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a
-                        href="{% url 'blog' %}">Blog</a></span></li>
-            <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a
-                        href="{% url 'chatroom' %}">Chatroom</a></span></li>
-            <span class="link-text">
-                <footer class="site-footer">
-                    <p>&copy; 2025 Kedza Ngwenya.<br /> All rights reserved.</p>
-                </footer>
-            </span>
-        </ul>
-    </div>
-    
-    </nav>
+        </nav>
     </header>
 
     <!----------------------------****************************main section***************************--------------------->
     <main>
         <section id="about">
-            <h2 class="about-heading" >Achievements</h2>
-            <p class="about-brief" >A curated collection of certificates and badges I’ve earned throughout my professional and academic journey.</p>
+            <h2 class="about-heading">Achievements</h2>
+            <p class="about-brief">A curated collection of certificates and badges I’ve earned throughout my
+                professional and academic journey.</p>
             <hr class="about-line">
             <div class="subheader">
                 <div class="search-box">
                     <i class="fa fa-search"></i>
                     <input type="search" id="search" placeholder="Search...">
                 </div>
-            
+
                 <select id="sort">
                     <option value="all" selected>Sort</option>
                     <option value="web">Web dev</option>
                     <option value="graphic">Graphic</option>
                 </select>
-            
+
                 <p class="total" id="total">0</p>
             </div>
 
@@ -135,56 +175,57 @@
             </div>
         </section>
     </main>
-    
 
-<script src="{% static 'chatapp/js/config.js' %}"></script>
+
+    <script src="{% static 'chatapp/js/config.js' %}"></script>
     <script>
-  const searchInput = document.getElementById("search");
-  const sortSelect  = document.getElementById("sort");
-  const container   = document.querySelector(".cert-container");
-  const cards       = Array.from(document.querySelectorAll(".cert-item"));
-  const totalEl     = document.getElementById("total");
+        const searchInput = document.getElementById("search");
+        const sortSelect = document.getElementById("sort");
+        const container = document.querySelector(".cert-container");
+        const cards = Array.from(document.querySelectorAll(".cert-item"));
+        const totalEl = document.getElementById("total");
 
-  const norm = s => (s || "").toString().trim().toLowerCase();
+        const norm = s => (s || "").toString().trim().toLowerCase();
 
-  function applyFilters() {
-    const q   = norm(searchInput.value);
-    const cat = sortSelect.value; // 'all' | 'web' | 'graphic'
+        function applyFilters() {
+            const q = norm(searchInput.value);
+            const cat = sortSelect.value; // 'all' | 'web' | 'graphic'
 
-    // Step 1: filter
-    let visibleCards = cards.filter(card => {
-      const cardCat = card.dataset.category || "";
-      const text    = norm(card.innerText);
+            // Step 1: filter
+            let visibleCards = cards.filter(card => {
+                const cardCat = card.dataset.category || "";
+                const text = norm(card.innerText);
 
-      const matchesSearch = !q || text.includes(q);
-      const matchesCat    = (cat === "all") || (cardCat === cat);
+                const matchesSearch = !q || text.includes(q);
+                const matchesCat = (cat === "all") || (cardCat === cat);
 
-      return matchesSearch && matchesCat;
-    });
+                return matchesSearch && matchesCat;
+            });
 
-    // Step 2: reorder cards
-    container.innerHTML = ""; // clear
-    visibleCards.forEach(c => container.appendChild(c));
+            // Step 2: reorder cards
+            container.innerHTML = ""; // clear
+            visibleCards.forEach(c => container.appendChild(c));
 
-    // Step 3: hide non-matching (so search doesn’t leave old ones)
-    cards.forEach(card => {
-      if (visibleCards.includes(card)) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    });
+            // Step 3: hide non-matching (so search doesn’t leave old ones)
+            cards.forEach(card => {
+                if (visibleCards.includes(card)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
 
-    // Step 4: update total
-    totalEl.textContent = visibleCards.length;
-  }
+            // Step 4: update total
+            totalEl.textContent = visibleCards.length;
+        }
 
-  searchInput.addEventListener("input", applyFilters);
-  sortSelect.addEventListener("change", applyFilters);
+        searchInput.addEventListener("input", applyFilters);
+        sortSelect.addEventListener("change", applyFilters);
 
-  applyFilters(); // run once on load
-</script>
+        applyFilters(); // run once on load
+    </script>
 
 
 </body>
+
 </html>
