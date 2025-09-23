@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
+    <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!----------------------------*************** Profile Section***************------------------------------- -->
+        <div class="profile-picture"></div>
+        <div class="name-badge">
+            <h2 class="profile-name">Kelvin Ngwenya</h2>
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}" alt="background" class="verified">
+            <p class="verified-text">Verified</p>
+        </div>
+        <p class="profile-tag">@mrafrica</p>
+        <!-------------------------************** Navigation Menu****************************------------------------->
+        <div class="themes">
+            <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+            <i id="toggle-dark" class="fa-regular fa-sun"></i>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-solid fa-trophy"></i><a href="{% url 'achievements' %}">Achievements</a>
+                </li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
+
+
+                <!---------------******mobile drop down**********************************------------------->
+            </ul>
+            <!-- Mobile Hamburger -->
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
+                    </div>
+                    
+                </div>
+
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+                    
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a
+                                href="{% url 'chat_home' %}">Home</a></span></li>
+                    <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a
+                                href="{% url 'about' %}">About</a></span></li>
+                    <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a
+                                href="{% url 'achievements' %}">Achievements</a></span></li>
+                    <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a
+                                href="{% url 'projects' %}">Projects</a> </span></li>
+                    <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a
+                                href="{% url 'contact' %}">Contact</a></span></li>
+                    <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a
+                                href="{% url 'blog' %}">Blog</a></span></li>
+                    <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a
+                                href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                    <span class="link-text">
+                        <footer class="site-footer">
+                            <p>&copy; 2025 Kedza Ngwenya.<br /> All rights reserved.</p>
+                        </footer>
+                    </span>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- <footer class="site-footer">
+                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+            </footer> -->
+    </header>
+    <!---************** Main Content Section ***************------------------->
+    <main>
+        <!----------*******************home section**********-->
+        <section id="home">
+            <h1 class="home-greeting">Hi, I'm Kedza Ngwenya</h1>
+            <p class="home-location"><span class="dot">•</span>Based in Johannesburg, South Africa<span
+                    class="dot">•</span></p>
+            <p>Passionate and expirienced Web Developer specializing in frontend and back-end .
+                Proficiant in HTML, CSS, JavaScript, and Python with a strong focus on creating responsive and
+                user-friendly web applications.
+                A collaborative taem player commited to delivering efficient and visually engaging websites.
+                Always eager to learn and adapt to new technologies, I strive to stay updated with the latest trends in
+                web development.
+            </p>
+            <hr />
+            <div class="skills-section">
+                <p class="skills-title"><i class="fa-solid fa-code"></i> Skills</p>
+                <p class="skills-subtitle">My professional skills.</p>
+
+                <div class="skills">
+                    <div class="skill">
+                        <span class="skill-bg-shape shape1"></span>
+                        <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML Icon">
+                        <span class="skill-text">HTML</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape2"></span>
+                        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon">
+                        <span class="skill-text">CSS</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape3"></span>
+                        <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript Icon">
+                        <span class="skill-text">JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape4"></span>
+                        <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python Icon">
+                        <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape5"></span>
+                        <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React Icon">
+                        <span class="skill-text">React</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape6"></span>
+                        <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django Icon">
+                        <span class="skill-text">Django</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape7"></span>
+                        <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git Icon">
+                        <span class="skill-text">Git</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape8"></span>
+                        <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub Icon">
+                        <span class="skill-text">GitHub</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-bg-shape shape9"></span>
+                        <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Icon">
+                        <span class="skill-text">Photoshop</span>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-bg-shape shape9"></span>
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/coreldraw-icon.svg"
+                            alt="CorelDRAW Icon">
+                        <span class="skill-text">CorelDRAW</span>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-bg-shape shape11"></span>
+                        <img src="https://img.icons8.com/color/48/inkscape.png" alt="Inkscape Icon">
+                        <span class="skill-text">Inkscape</span>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-bg-shape shape5"></span>
+                        <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma Icon">
+                        <span class="skill-text">Figma</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <section class="featured-section">
+                <div>
+                    <img src="{% static 'chatapp/images/fetured-section.svg' %}" alt="featured-section"
+                        class="img-icon">
+                    <p class="featured-heading">Featured Section</p>
+                </div>
+                <a class="links-wrapper" href="{% url 'projects' %}">
+                    <p class="featured-subtitle">Explore my featured projects and achievements.</p>
+                    <div class="show-case-container">
+                        <div class="show-projects">
+                            <i class="fa-solid fa-list-check"></i>
+                            <p class="showcase-subtitle">Projects Showcase</p>
+                            <p class="showcase-subtitle">A collection of my best work.</p>
+                            <div class="projects-list">
+                                <div class="project-item">
+                                    <img src="{% static 'chatapp/images/keyconnect.jpeg' %}" alt="Project 1">
+                                </div>
+                                <div class="project-item">
+                                    <img src="{% static 'chatapp/images/potifolio.png' %}" alt="Project 2">
+                                </div>
+                                <div class="project-item">
+                                    <img src="{% static 'chatapp/images/Quizy.png' %}" alt="Project 3">
+                                </div>
+                                <div class="project-item">
+                                    <img src="{% static 'chatapp/images/project4.jpg' %}" alt="Project 4">
+                                </div>
+                                <div class="project-item">
+                                    <img src="{% static 'chatapp/images/project5.jpg' %}" alt="Project 5">
+                                </div>
+                            </div>
+                        </div>
+                </a>
+
+                <a class="links-wrapper" href="{% url 'about' %}">
+                    <div class="show-about">
+                        <i class="fa-regular fa-circle-user icon"></i>
+                        <p>About Me</p>
+                        <p class="showcase-subtitle">About me and Who i'm am</p>
+                        <div class="about-gallery">
+                            <div class="about-item">
+                                <img src="{% static 'chatapp/images/About1.jpg' %}" alt="About 1">
+                            </div>
+                            <div class="about-item">
+                                <img src="{% static 'chatapp/images/about2.jpg' %}" alt="About 2">
+                            </div>
+                            <div class="about-item">
+                                <img src="{% static 'chatapp/images/About6.jpg' %}" alt="About 3">
+                            </div>
+                            <div class="about-item">
+                                <img src="{% static 'chatapp/images/About4.png' %}" alt="About 4">
+                            </div>
+                            <div class="about-item">
+                                <img src="{% static 'chatapp/images/profile.png' %}" alt="About 5">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <div class="show-skills">
+                    <i class="fa-solid fa-code icon"></i>
+                    <p>Skills Showcase</p>
+                    <p class="showcase-subtitle">A showcase of my skills and expertise.</p>
+                    <div class="skills-gallery">
+                        <div class="skill-item1">
+                            <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML Icon">
+                            <p class="skill-text1">HTML</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS Icon">
+                            <p class="skill-text1">CSS</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript Icon">
+                            <p class="skill-text1">JavaScript</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python Icon">
+                            <p class="skill-text1">Python</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React Icon">
+                            <p class="skill-text1">React</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django Icon">
+                            <p class="skill-text1">Django</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git Icon">
+                            <p class="skill-text1">Git</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="GitHub Icon">
+                            <p class="skill-text1">GitHub</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Icon">
+                            <p class="skill-text1">Photoshop</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/coreldraw-2021.png" alt="CorelDRAW Icon">
+                            <p class="skill-text1">CorelDRAW</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/inkscape.png" alt="Inkscape Icon">
+                            <p class="skill-text1">Inkscape</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="https://img.icons8.com/color/48/figma--v1.png" alt="Figma Icon">
+                            <p class="skill-text1">Figma</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="featured-section2">
+                <div class="show-case-container2">
+
+                    <!-- Achievements -->
+                        <a class="links-wrapper" href="{% url 'achievements' %}">
+                            <div class="show-achievements">
+                                <div class="heading-text">
+                                    <i class="fa-solid fa-certificate"></i>
+                                    <p class="achievements-head">Achievements</p>
+                                    <p class="achievements-subheading">Milestones from programs, projects, and Community
+                                    </p>
+                                </div>
+                                <div class="achievements-gallery">
+                                    <div class="achievement-item">
+                                        <img src="{% static 'chatapp/images/Achievement2.png' %}" alt="Achievement1">
+                                    </div>
+                                    <div class="achievement-item">
+                                        <img src="{% static 'chatapp/images/Achievements1.png' %}" alt="Achievement2">
+                                    </div>
+                                    <!-- <div class="achievement-item">
+                                <img src="images/achievement3.jpg" alt="Achievement 3">
+                            </div>
+                            <div class="achievement-item">
+                                <img src="images/achievement4.jpg" alt="Achievement 4">
+                            </div>
+                            <div class="achievement-item">
+                                <img src="images/achievement5.jpg" alt="Achievement 5">
+                            </div> -->
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Chatroom -->
+                        <a class="links-wrapper" href="{% url 'chatroom' %}">
+                            <div class="show-chatroom">
+                                <div class="chat-text">
+                                    <i class="fa-regular fa-comment-dots icon"></i>
+                                    <p>Chatroom</p>
+                                    <p class="showcase-subtitle">Join the conversation in my chatroom!</p>
+                                </div>
+                                <div class="chatroom1">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                    <p class="chatroom-chat">
+                                        How did start your journey in web development?
+                                    </p>
+                                </div>
+                                <div class="chatroom2">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                    <p class="chatroom-chat">
+                                        it all started with a curiosity about how websites work.
+                                        I began learning HTML and CSS, and gradually moved on to JavaScript and backend
+                                        technologies.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Services -->
+                        <!-- Services -->
+                        <div class="show-services">
+                            <div class="services-text">
+                                <i class="fa-solid fa-briefcase icon"></i>
+                                <p>Services</p>
+                                <p class="showcase-subtitle">Explore the services I offer.</p>
+                            </div>
+
+                            <!-- NEW wrapper -->
+                            <div class="services-list">
+                                <p class="services-bold">Web Development</p>
+                                <p class="services-bold">Responsive Design</p>
+                                <p class="services-bold">UI/UX Design</p>
+                                <p class="services-bold">E-commerce Solutions</p>
+                                <p class="services-bold">Content Management Systems</p>
+                                <p class="services-bold">SEO Optimization</p>
+                                <p class="services-bold">Performance Optimization</p>
+                                <p class="services-bold">API Development</p>
+                                <p class="services-bold">Consultation and Strategy</p>
+                            </div>
+                        </div>
+
+
+                </div>
+            </section>
+        </section>
+
+        <script>
+            const services = document.querySelectorAll(".services-bold");
+            let index = 0;
+
+            setInterval(() => {
+                services.forEach((s, i) => s.classList.toggle("active", i === index));
+                index = (index + 1) % services.length;
+            }, 5000);
+
+        </script>
+        <script src="{% static 'chatapp/js/config.js' %}"></script>
+
+
+</body>
+
+</html>

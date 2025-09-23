@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kelvin || blog</title>
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <header>
+        <!----------------------------*************** Profile Section***************------------------------------- -->
+        <div class="profile-picture"></div>
+        <div class="name-badge">
+            <h2 class="profile-name">Kelvin Ngwenya</h2>
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
+            <p class="verified-text">Verified</p>
+        </div>
+        <p class="profile-tag">@mrafrica</p>
+        <!-------------------------************** Navigation Menu****************************------------------------->
+        <div class="themes">
+            <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+            <i id="toggle-dark" class="fa-regular fa-sun"></i>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-solid fa-trophy"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
+            </ul>
+            <!---------------******mobile drop down**********************************------------------->
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
+                    </div>
+                </div>
+            
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+                    
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-solid fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a></span></li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                </ul>
+                <span class="link-text">
+                    <footer class="site-footer">
+                        <p>&copy; 2025 Kedza Ngwenya.<br/> All rights reserved.</p>
+                    </footer>
+                </span>
+            </div>
+            
+
+        </nav>
+    </header>
+    <main>
+        <h1 class="blog">Coming Soon</h1>
+    </main>
+    
+    <script src="{% static 'chatapp/js/config.js' %}"></script>
+    
+</body>
+</html>

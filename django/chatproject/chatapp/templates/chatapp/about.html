@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
+    <title>About || Kelvin</title>
+</head>
+<body>
+    <header>
+        <!----------------------------*************** Profile Section***************------------------------------- -->
+        <div class="profile-picture"></div>
+        <div class="name-badge">
+            <h2 class="profile-name">Kelvin Ngwenya</h2>
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
+            <p class="verified-text">Verified</p>
+        </div>
+        <p class="profile-tag">@mrafrica</p>
+        <!-------------------------************** Navigation Menu****************************------------------------->
+        <div class="themes">
+            <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+            <i id="toggle-dark" class="fa-regular fa-sun"></i>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><i class="fa-solid fa-house nav-icons"></i><a href="{% url 'chat_home' %}">Home</a></li>
+                <li><i class="fa-regular fa-circle-user nav-icons"></i><a href="{% url 'about' %}">About</a></li>
+                <li><i class="fa-solid fa-trophy"></i><a href="{% url 'achievements' %}">Achievements</a></li>
+                <li><i class="fa-solid fa-list-check nav-icons"></i><a href="{% url 'projects' %}">Projects</a></li>
+                <li><i class="fa-regular fa-address-book nav-icons"></i><a href="{% url 'contact' %}">Contact</a></li>
+                <li><i class="fa-solid fa-blog nav-icons"></i><a href="{% url 'blog' %}">Blog</a></li>
+                <li><i class="fa-regular fa-comment-dots nav-icons"></i><a href="{% url 'chatroom' %}">Chatroom</a></li>
+
+                <!---------------******mobile drop down**********************************------------------->
+                
+            </ul>
+            <!-- Mobile Hamburger -->
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
+                    </div>
+                </div>
+            
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+                    
+                <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a> </span></li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                <span class="link-text">
+                  <footer class="site-footer">
+                    <p>&copy; 2025 Kedza Ngwenya.<br/> All rights reserved.</p>
+                  </footer>
+                </span>
+                </ul>
+            </div>
+            <!-- <footer class="site-footer">
+                <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+            </footer> -->
+
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2 class="about-heading" >About Me</h2>
+            <p class="about-brief" >A brief introduction to who I am.</p>
+            <hr class="about-line"/>
+            <p class="about-welcome">Welcome to my portfolio!</p>
+            <div class="about-paragraph">I’m Kelvin Ngwenya, a student specializing in Full Stack Development at the FNB App Academy and a
+                self-taught web designer.
+                I’m passionate about creating impactful websites and applications that combine functionality with great
+                user experiences.
+            </div>
+            <div class="about-paragraph">My skill set covers modern frontend technologies like HTML, CSS, and JavaScript, along with backend
+                development using Django and MySQL. Whether I’m designing intuitive interfaces or building efficient
+                backend systems,
+                I focus on delivering solutions that are both user-friendly and high-performing.
+            </div>
+            <div class="about-paragraph">I’m a fast learner who thrives in dynamic environments, enjoys solving complex problems, and works well
+                in collaborative teams. I believe that clear communication and team synergy are essential for success in
+                web development. My journey so far has strengthened not only my technical and analytical skills but also
+                my leadership abilities.
+                I’m always eager to learn, share knowledge, and contribute to projects that make a real impact.
+            </div>
+            <div>Best regards</div>
+            <div class="about-sign"></div>
+
+            <hr class="about-line"/>
+
+<!-------------------==============================career=================================****--------------->
+            <div class="career">
+                <div class="career-text">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <div>
+                        <p class="career-head">Career</p>
+                        <p class="career-subheading">My professional journey</p>
+                    </div>
+                </div>
+
+            
+                <div class="career-items">
+                <!-----------*********************************Alison*************------------------>
+                    <div class="career-item">
+                        <div class="career-flex">
+                            <img src="{% static 'chatapp/images/alison-logo.svg' %}" alt="alison-logo" >
+                            <div class="item-text">
+                                <p class="career-item-head">Graphic Design and Visuals</p>
+                                <p class="career-name">ALISON</p>
+                                <p class="career-date">
+                                    <span class="year">2024</span> • 1 Months • <span class="where">Online</span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div class="responsibilities">
+                            <p class="show-more">Show responsibilities</p>
+                            <div class="show-more-items">
+                                <p class="shw-more-item">• Studied design principles including balance, contrast, and alignment</p>
+                                <p class="shw-more-item">• Created digital visuals using Adobe Photoshop & Illustrator</p>
+                                <p class="shw-more-item">• Designed engaging social media graphics and posters</p>
+                                <p class="shw-more-item">• Developed typography and layout design skills</p>
+                                <p class="shw-more-item">• Learned color theory and its application in branding</p>
+                                <p class="shw-more-item">• Completed Alison Graphic Design and Visuals certification</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="career-item">
+                        <div class="career-flex">
+                            <img src="{% static 'chatapp/images/fnb-app-accademy-logo.png' %}" alt="fnblogo">
+                            <div class="item-text">
+                                <p class="career-item-head">Full Stack Developer</p>
+                                <p class="career-name">FNB App Academy</p>
+                                <p class="career-date">
+                                    <span class="year">2025</span> • 3 Months • <span class="where">Online</span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div class="responsibilities">
+                            <p class="show-more">Show responsibilities</p>
+                            <div class="show-more-items">
+                                <p class="shw-more-item">• Built responsive web apps</p>
+                                <p class="shw-more-item">• Integrated REST APIs</p>
+                                <p class="shw-more-item">• Database design & queries</p>
+                                <p class="shw-more-item">• UI/UX collaboration</p>
+                                <p class="shw-more-item">• Testing & debugging</p>
+                                <p class="shw-more-item">• Agile teamwork</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------*****************freecodeCamp*************------>
+                    <div class="career-item">
+                        <div class="career-flex">
+                            <img src="{% static 'chatapp/images/freecodecamp.webp' %}" alt="freecodeCamp- logo">
+                            <div class="item-text">
+                                <p class="career-item-head">Responsive Web Development</p>
+                                <p class="career-name">FREE-CODE-CAMP</p>
+                                <p class="career-date">
+                                    <span class="year">2025</span> • 2 Months • Current • <span class="where">Online</span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div class="responsibilities">
+                            <p class="show-more">Show responsibilities</p>
+                            <div class="show-more-items">
+                                <p class="shw-more-item">• Built responsive layouts using HTML and CSS</p>
+                                <p class="shw-more-item">• Applied Flexbox and CSS Grid for page structure</p>
+                                <p class="shw-more-item">• Created accessible and semantic HTML markup</p>
+                                <p class="shw-more-item">• Developed mobile-first responsive designs</p>
+                                <p class="shw-more-item">• Styled projects using modern CSS techniques</p>
+                                <p class="shw-more-item">• Completed FreeCodeCamp Responsive Web Design certification</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!---==============================================================education=====================---------------->
+            <hr class="edu-line"/>
+            <div class="Education">
+                <div class="education-text">
+                    <!-- Icon + Heading/Subheading -->
+                    <div class="education-header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <p class="education">Education</p>
+                            <p class="education-subheading">My educational journey</p>
+                        </div>
+                    </div>
+            
+                    <!-- Portfolio Downloads -->
+                    <div class="downloads">
+                        <div class="portfolio-download" onclick="downloadPortfolio1()">
+                            <i class="fa-solid fa-download"></i>
+                            <p class="download-btn">Download Portfolio</p>
+                        </div>
+                        <div class="portfolio-download" onclick="downloadPortfolio2()">
+                            <i class="fa-solid fa-download"></i>
+                            <p class="download-btn">Download Portfolio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-container">
+                    <img src="{% static 'chatapp/images/school.jpg' %}" alt="school-logo">
+                    <div>
+                        <p class="School-name">Nyamasanga Secondary School</p>
+                        <p class="level-of-education">O'level</p>
+                        <p class="year">2018-2021 <span class="location">Chinhoyi,Zimbabwe ID</span></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </main>
+
+
+    <script src="{% static 'chatapp/js/config.js' %}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const showMoreBtns = document.querySelectorAll(".show-more");
+
+            showMoreBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const items = btn.nextElementSibling;
+                    items.classList.toggle("active");
+
+                    // Toggle button text
+                    btn.textContent = items.classList.contains("active")
+                        ? "Hide responsibilities"
+                        : "Show responsibilities";
+                });
+            });
+        });
+
+        function downloadPortfolio1() {
+                // Example: Download a PDF
+                const link = document.createElement("a");
+                link.href = "images/portfolio.pdf";  
+                link.download = "Kedza-Portfolio.pdf";
+                link.click();
+            }
+
+            // Second button function
+            function downloadPortfolio2() {
+                //  Download my  DOCX file 
+                const link = document.createElement("a");
+                link.href = "files/resume.pdf";  
+                link.download = "Kedza-Resume.pdf";
+                link.click();
+            }
+
+    </script>
+</body>
+</html>

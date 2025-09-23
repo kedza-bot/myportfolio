@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chatapp/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/2be268ca3f.js" crossorigin="anonymous"></script>
+    <title>Contact|| Kedza</title>
+</head>
+
+<body>
+    <header>
+        <!----------------------------*************** Profile Section***************------------------------------- -->
+        <div class="profile-picture"></div>
+        <div class="name-badge">
+            <h2 class="profile-name">Kelvin Ngwenya</h2>
+            <img src="{% static 'chatapp/images/verified-badge-svgrepo-com.svg' %}"alt="background" class="verified" >
+            <p class="verified-text">Verified</p>
+        </div>
+        <p class="profile-tag">@mrafrica</p>
+        <!-------------------------************** Navigation Menu****************************------------------------->
+        <div class="themes">
+            <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+            <i id="toggle-dark" class="fa-regular fa-sun"></i>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-solid fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a> </span> </li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
+            </ul>
+            <!---------------******mobile drop down**********************************------------------->
+            <!-- Mobile Hamburger -->
+            <!-- Sidebar Navigation -->
+            <div class="sidebar" id="sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-picture small"></div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Kelvin<span class="link-text">Ngwenya</span>
+                            <img src="/static/chatapp/images/verified-badge-svgrepo-com.svg" alt="verified" class="verified">
+                        </h3>
+                        <p class="profile-tag">@mrafrica</p>
+                    </div>
+                </div>
+            
+                <!-- Nav Icons -->
+                <ul class="sidebar-icons">
+
+                    <div class="themess">
+                        <i id="toggle-light" class="fa-solid fa-cloud-moon"></i>
+                        <span class="link-text"><i id="toggle-dark" class="fa-regular fa-sun"></i></span>
+                    </div>
+                    
+                    <li data-label="Home"><i class="fa-solid fa-house"></i><span class="link-text"><a href="{% url 'chat_home' %}">Home</a></span></li>
+                <li data-label="About"><i class="fa-regular fa-circle-user"></i><span class="link-text"><a href="{% url 'about' %}">About</a></span></li>
+                <li data-label="Achievements"><i class="fa-regular fa-trophy"></i><span class="link-text"><a href="{% url 'achievements' %}">Achievements</a></span></li>
+                <li data-label="Projects"><i class="fa-solid fa-list-check"></i><span class="link-text"><a href="{% url 'projects' %}">Projects</a></span></li>
+                <li data-label="Contact"><i class="fa-regular fa-address-book"></i><span class="link-text"><a href="{% url 'contact' %}">Contact</a></span></li>
+                <li data-label="Blog"><i class="fa-solid fa-blog"></i><span class="link-text"><a href="{% url 'blog' %}">Blog</a></span></li>
+                <li data-label="Chatroom"><i class="fa-regular fa-comment-dots"></i><span class="link-text"><a href="{% url 'chatroom' %}">Chatroom</a></span></li>
+                <span class="link-text">
+                  <footer class="site-footer">
+                    <p>&copy; 2025 Kedza Ngwenya.<br/> All rights reserved.</p>
+                  </footer>
+                </span>
+                </ul>
+            </div>
+            <!-- <footer class="site-footer">
+                            <p>&copy; 2025 Kedza Ngwenya. All rights reserved.</p>
+                        </footer> -->
+            
+            </nav>
+    </header>
+    <main>
+        <section id="Contact">
+            <h2 class="contact-heading">Contact</h2>
+            <p class="contact-brief">Let’s get in touch.</p>
+            <hr class="contact-line" />
+            <p class="contact-brief">Find me on social media.</p>
+
+            <div class="gmail-container">
+                <img class="gmail-watermark" src="https://img.icons8.com/color/96/gmail--v1.png" alt="gmail watermark">
+                <div class="gmail-text">
+                    <p class="card-text">Stay in Touch</p>
+                    <p class="card-text">Reach out via email for inquiries or collaborations.</p>
+                </div>
+                <a href="mailto:kedzaafrica@gmail.com" target="_blank" class="gmail-btn">Send Email</a>
+                <img src="https://img.icons8.com/color/48/gmail--v1.png" alt="gmail logo" class="social-logo">
+            </div>
+            <div class="gaba">
+                <!-------------------- Instagram ---------------->
+                <div class="social-card instagram">
+                    <img class="social-watermark" src="https://img.icons8.com/fluency/96/instagram-new.png"
+                        alt="Instagram watermark">
+                    <div class="social-text">
+                        <p class="card-text">Follow My Journey</p>
+                        <p class="card-text">Follow my creative journey.</p>
+                    </div>
+                    <a href="https://www.instagram.com/mr_africa_black_is_power/" target="_blank" class="social-btn">Go to Instagram</a>
+                    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram logo" class="social-logo">
+                </div>
+            
+                <!--------------------- LinkedIn ---------------->
+                <div class="social-card linkedin">
+                    <img class="social-watermark" src="https://img.icons8.com/color/96/linkedin.png" alt="LinkedIn watermark">
+                    <div class="social-text">
+                        <p class="card-text">Let's Connect</p>
+                        <p class="card-text">Connect with me professionally.</p>
+                    </div>
+                    <a href="www.linkedin.com/in/kedza-ngwenya" target="_blank" class="social-btn">Go to LinkedIn</a>
+                    <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn logo" class="social-logo">
+                </div>
+            
+                <!---------------------- GitHub ----------------->
+                <div class="social-card github">
+                    <img class="social-watermark" src="https://img.icons8.com/ios-glyphs/96/github.png" alt="GitHub watermark">
+                    <div class="social-text">
+                        <p class="card-text">Explore My Code</p>
+                        <p class="card-text">Explore my open-source work.</p>
+                    </div>
+                    <a href="https://github.com/kedza-bot" target="_blank" class="social-btn">Go to GitHub</a>
+                    <img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub logo" class="social-logo">
+                </div>
+            
+                <!---------------------- TikTok ----------------->
+                <div class="social-card tiktok">
+                    <img class="social-watermark" src="https://img.icons8.com/fluency/96/tiktok.png" alt="TikTok watermark">
+                    <div class="social-text">
+                        <p class="card-text">Enjoy the Fun</p>
+                        <p class="card-text">Watch engaging and fun content.</p>
+                    </div>
+                    
+                    <a href="https://www.tiktok.com/@mr_africa_official?_t=ZM-8yHC3097jlA&_r=1" target="_blank" class="social-btn">Go to Instagram</a>
+                    <img src="https://img.icons8.com/fluency/48/tiktok.png" alt="TikTok logo" class="social-logo">
+                </div>
+            </div>
+        </section>
+<hr class="line">
+
+<p class="message-title">Or send me a message</p>
+
+<div class="chat-gaba">
+    <form id="contactForm" method="post" action="{% url 'contact_submit' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Name" name="name" id="name" required>
+        <input type="email" placeholder="Email" name="email" id="email" required>
+        <textarea name="message" id="message" placeholder="Write your message..." required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="statusMessage"></p>
+</div>
+
+<script>
+    // CSRF token helper
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return null;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const statusMessage = document.getElementById("statusMessage");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("/send-message/", {
+                    method: "POST",
+                    headers: { "X-CSRFToken": getCookie("csrftoken") },
+                    body: formData,
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    statusMessage.style.color = "green";
+                    statusMessage.textContent = "✅ " + data.message;
+                    form.reset();
+
+                    // Auto-clear message after 4 seconds
+                    setTimeout(() => {
+                        statusMessage.textContent = "";
+                    }, 4000);
+                } else {
+                    statusMessage.style.color = "red";
+                    statusMessage.textContent =
+                        "❌ " + (data.error || "Something went wrong");
+
+                    // Auto-clear error after 6 seconds
+                    setTimeout(() => {
+                        statusMessage.textContent = "";
+                    }, 6000);
+                }
+            } catch (error) {
+                statusMessage.style.color = "red";
+                statusMessage.textContent = "❌ Network error. Try again.";
+                console.error("Error sending message:", error);
+
+                setTimeout(() => {
+                    statusMessage.textContent = "";
+                }, 6000);
+            }
+        });
+    });
+</script>
+
+
+
+
+<script src="{% static 'chatapp/js/config.js' %}"></script>
+
+</body>
+
+</html>

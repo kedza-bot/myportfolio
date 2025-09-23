@@ -1,0 +1,177 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    input[type="checkbox"] {
+      margin-right: 0.4rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 6px;
+      background: #4cafef;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2f93d1;
+    }
+    .extra-links {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .extra-links a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .divider {
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+    .google-btn {
+      background: #fff;
+      color: #444;
+      font-weight: bold;
+      border-radius: 6px;
+      padding: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .google-btn:hover {
+      background: #f2f2f2;
+    }
+    .google-btn img {
+      width: 20px;
+      height: 20px;
+    }
+    .github-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    text-decoration: none; /* remove underline */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.github-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Sign In to Chat(kedza)</h1>
+    <form method="post" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      <label for="id_login">Username or Email</label>
+      {{ form.login }}
+
+      <label for="id_password">Password</label>
+      {{ form.password }}
+      <div class="extra-links">
+        <a href="{% url 'account_reset_password' %}">Forgot your password?</a>
+      </div>
+
+      <label>
+        {{ form.remember }} Remember me
+      </label>
+
+      <button type="submit">Sign In</button>
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+
+    <div class="divider">OR</div>
+
+    <!-- Google login button -->
+    <a href="{% provider_login_url 'google' process='login' %}" class="google-btn">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+      Continue with Google
+    </a>
+    <a href="{% provider_login_url 'github' process='login' %}" class="github-btn">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+         alt="GitHub Logo" class="github-icon">
+    Continue with GitHub
+</a>
+
+
+    <div class="extra-links">
+      <p>Don’t have an account? <a href="{% url 'account_signup' %}">Sign Up</a></p>
+    </div>
+  </div>
+</body>
+</html>
