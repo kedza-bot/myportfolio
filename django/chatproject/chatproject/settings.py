@@ -111,6 +111,7 @@ USE_TZ = True
 # Static files
 # ------------------------
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # ------------------------
@@ -141,9 +142,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #-------------------------------
 
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
+# Use environment variable to set DEBUG
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+# Allowed hosts
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+
+# Email settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp-relay.brevo.com"
 EMAIL_PORT = 587
@@ -151,4 +157,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("BREVO_SMTP_USER")
 EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_KEY")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
-CONTACT_RECIPIENT = os.getenv("CONTACT_RECIPIENT", EMAIL_HOST_USER)
+CONTACT_RECIPIENT = os.getenv("CONTACT_RECIPIENT", os.getenv("BREVO_SMTP_USER"))
+
