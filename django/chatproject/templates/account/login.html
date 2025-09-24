@@ -1,208 +1,201 @@
 {% load socialaccount %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="kelvin Ngwenya | kedza Ngwenya | Mr africa  | Portfolio">
+
+  <!-- SEO + Meta -->
+  <meta name="title" content="Kelvin Ngwenya | Kedza Ngwenya | Mr Africa | Portfolio">
   <meta name="description" content="Showcasing my projects in web development, design, and software engineering.">
   <meta name="google-site-verification" content="nKdrzYArP48GoFzi0wH2aDncQWLNqPBlnkwQbpKY2uo" />
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://myportfolio-i2g6.onrender.com">
-  <meta property="og:title" content="kedza Ngwenya| kelvin Ngwenya| Mr africa | Portfolio">
-  <meta property="og:description"
-    content="Showcasing my projects in web development, design, and software engineering.">
-  <meta property="og:image" content="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/486346725_687613853688134_1156458610048094690_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=HuCLcAP8FQYQ7kNvwGiqq9Z&_nc_oc=AdnGhK2SLGvWHqhpnoaZwiYAfEMSCl91xY0rSPfsFZ-buyEnhC03osn94_MxQg9RZts&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BK8OSQkrECA0UFC77ORkJA&oh=00_AfaM1EPilwJgSzswU79TnYwgrjhRczhSVra-PZe9AN5V7g&oe=68D8596D">
+  <meta property="og:title" content="Kedza Ngwenya | Kelvin Ngwenya | Mr Africa | Portfolio">
+  <meta property="og:description" content="Showcasing my projects in web development, design, and software engineering.">
+  <meta property="og:image" content="https://scontent-jnb2-1.xx.fbcdn.net/...jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="Mr africa kedzamix picture a software engineer">
+  <meta property="twitter:card" content="Mr Africa kedzamix picture a software engineer">
   <meta property="twitter:url" content="https://myportfolio-i2g6.onrender.com">
-  <meta property="twitter:title" content="kedza Ngwenya| kelvin Ngwenya| Mr africa | Portfolio">
-  <meta property="twitter:description"
-    content="Showcasing my projects in web development, design, and software engineering.">
-  <meta property="twitter:image" content="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/486346725_687613853688134_1156458610048094690_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=HuCLcAP8FQYQ7kNvwGiqq9Z&_nc_oc=AdnGhK2SLGvWHqhpnoaZwiYAfEMSCl91xY0rSPfsFZ-buyEnhC03osn94_MxQg9RZts&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BK8OSQkrECA0UFC77ORkJA&oh=00_AfaM1EPilwJgSzswU79TnYwgrjhRczhSVra-PZe9AN5V7g&oe=68D8596D">
+  <meta property="twitter:title" content="Kedza Ngwenya | Kelvin Ngwenya | Mr Africa | Portfolio">
+  <meta property="twitter:description" content="Showcasing my projects in web development, design, and software engineering.">
+  <meta property="twitter:image" content="https://scontent-jnb2-1.xx.fbcdn.net/...jpg">
 
-  <!-- Browser Theme -->
-  <meta name="theme-color" content="#0f172a"> 
-  <meta name="msapplication-TileColor" content="#0f172a">
-  <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-1/552699584_826634393119412_853826705700106395_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=7kCP8w0LrkwQ7kNvwHGnmvE&_nc_oc=AdkYtMBGKElf0ugBtYrZkGsehvDu0rvtu7UZ7BSy1Rxot3qsR-B9peSztVKvVmnCTLY&_nc_zt=24&_nc_ht=scontent-jnb2-1.xx&_nc_gid=BboeP9y7AYjXLPK6E8Iy6A&oh=00_AfZbl-PGZopG1lDH-_FfJBWfDVOo3rYn8y4aqRMpFNb3kg&oe=68D88F48">
-
-
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="...jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="...jpg">
 
   <title>Sign In</title>
   <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
+      background: #e0f0ff;
     }
-    .login-box {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 12px;
-      width: 320px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    .login-container {
+      display: flex;
+      width: 900px;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .login-left {
+      flex: 1;
+      background: linear-gradient(135deg, #007BFF, #00A1FF);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: white;
+      font-size: 2rem;
+      font-weight: bold;
     }
-    h1 {
+
+    .login-right {
+      flex: 1.2;
+      padding: 40px;
+    }
+
+    .login-right h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
+      color: #007BFF;
+      margin-bottom: 25px;
     }
-    label {
-      display: block;
-      margin: 0.5rem 0 0.2rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
     }
-    input[type="text"],
-    input[type="password"] {
+
+    input {
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
       width: 100%;
-      padding: 0.6rem;
-      border: none;
-      border-radius: 6px;
-      margin-bottom: 1rem;
     }
-    input[type="checkbox"] {
-      margin-right: 0.4rem;
-    }
+
     button {
-      width: 100%;
-      padding: 0.7rem;
+      padding: 12px;
+      margin-top: 20px;
       border: none;
-      border-radius: 6px;
-      background: #4cafef;
+      border-radius: 8px;
+      background: #007BFF;
       color: white;
       font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s;
     }
+
     button:hover {
-      background: #2f93d1;
+      background: #0056b3;
     }
-    .extra-links {
-      text-align: center;
-      margin-top: 1rem;
+
+    .third-party-login {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
     }
-    .extra-links a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    .divider {
-      text-align: center;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-    .divider::before,
-    .divider::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 40%;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.4);
-    }
-    .divider::before { left: 0; }
-    .divider::after { right: 0; }
-    .google-btn {
-      background: #fff;
-      color: #444;
-      font-weight: bold;
-      border-radius: 6px;
-      padding: 0.6rem;
+
+    .third-party-login a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #007BFF;
+      color: #007BFF;
+      transition: all 0.3s;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      gap: 8px;
     }
-    .google-btn:hover {
-      background: #f2f2f2;
+
+    .third-party-login a:hover {
+      background: #007BFF;
+      color: white;
     }
-    .google-btn img {
+
+    .third-party-login img {
       width: 20px;
       height: 20px;
     }
-    .github-btn {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.8rem 1.2rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 1rem;
-    text-decoration: none; /* remove underline */
-    transition: background 0.3s ease, transform 0.2s ease;
-}
 
-.github-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
+    .extra-links {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
 
-.github-icon {
-    width: 20px;
-    height: 20px;
-}
+    .extra-links a {
+      color: #007BFF;
+      text-decoration: none;
+    }
 
+    @media(max-width: 900px) {
+      .login-container {
+        flex-direction: column;
+      }
+      .login-left {
+        height: 150px;
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="login-box">
-    <h1>Sign In to Chat(kedza)</h1>
-    <form method="post" action="{% url 'account_login' %}">
-      {% csrf_token %}
-      {{ form.non_field_errors }}
+  <div class="login-container">
+    <div class="login-left">
+      Welcome Back
+    </div>
+    <div class="login-right">
+      <h2>Sign In</h2>
+      <form method="post" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
 
-      <label for="id_login">Username or Email</label>
-      {{ form.login }}
+        <input type="text" name="login" placeholder="Username or Email" required>
+        <input type="password" name="password" placeholder="Password" required>
 
-      <label for="id_password">Password</label>
-      {{ form.password }}
+        <label>
+          {{ form.remember }} Remember me
+        </label>
+
+        <button type="submit">Sign In</button>
+        <input type="hidden" name="next" value="{{ next }}">
+      </form>
+
       <div class="extra-links">
         <a href="{% url 'account_reset_password' %}">Forgot your password?</a>
       </div>
 
-      <label>
-        {{ form.remember }} Remember me
-      </label>
+      <div class="third-party-login">
+        <a href="{% provider_login_url 'google' %}">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+          Google
+        </a>
+        <a href="{% provider_login_url 'github' %}">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+          GitHub
+        </a>
+      </div>
 
-      <button type="submit">Sign In</button>
-      <input type="hidden" name="next" value="{{ next }}">
-    </form>
-
-    <div class="divider">OR</div>
-
-    <!-- Google login button -->
-    <a href="{% provider_login_url 'google' process='login' %}" class="google-btn">
-      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
-      Continue with Google
-    </a>
-    <a href="{% provider_login_url 'github' process='login' %}" class="github-btn">
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
-         alt="GitHub Logo" class="github-icon">
-    Continue with GitHub
-</a>
-
-
-    <div class="extra-links">
-      <p>Don’t have an account? <a href="{% url 'account_signup' %}">Sign Up</a></p>
+      <div class="extra-links">
+        <p>Don’t have an account? <a href="{% url 'account_signup' %}">Sign Up</a></p>
+      </div>
     </div>
   </div>
 </body>
