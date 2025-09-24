@@ -126,3 +126,15 @@ def contact_submit(request):
         )
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)
+    
+    
+    
+from django.http import HttpResponse
+
+def robots_txt(request):
+    content = """User-agent: *
+Disallow:
+
+Sitemap: https://myportfolio-i2g6.onrender.com/sitemap.xml
+"""
+    return HttpResponse(content, content_type="text/plain")

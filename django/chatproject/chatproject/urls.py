@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from chatapp import views
 from chatapp.sitemaps import StaticViewSitemap
+from chatapp.views import robots_txt
 
 
 
@@ -38,5 +39,7 @@ urlpatterns = [
     
     # Sitemap
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    
+    path("robots.txt", robots_txt),
 ]
 
