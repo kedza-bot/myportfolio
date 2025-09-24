@@ -1,19 +1,17 @@
-"""
-Django settings for chatproject project.
-"""
-
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#0ai6yzk*d1o6dmoh!&vsw_sjl!_jn$n^h*!tq%w9!ie=3)1v('
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+# ------------------------
+# SECURITY
+# ------------------------
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-fallback-key")
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # ------------------------
 # Application definition
@@ -26,8 +24,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # Needed for django-allauth
     'django.contrib.sites',
 
     # Third-party apps
@@ -35,8 +31,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    # Social providers
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
 
@@ -50,22 +44,21 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'allauth.account.middleware.AccountMiddleware',  # <- required by allauth
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 ROOT_URLCONF = 'chatproject.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / "templates"],  # You can add BASE_DIR / "templates" if needed
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',  # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -75,9 +68,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'chatproject.wsgi.application'
 
-
 # ------------------------
-# Database
+# Database (SQLite)
 # ------------------------
 DATABASES = {
     'default': {
@@ -86,17 +78,15 @@ DATABASES = {
     }
 }
 
-
 # ------------------------
 # Password validation
 # ------------------------
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
-
 
 # ------------------------
 # Internationalization
@@ -106,50 +96,34 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
 # ------------------------
 # Static files
 # ------------------------
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # ------------------------
-# Django Allauth settings
+# Django Allauth
 # ------------------------
-SITE_ID = 2
+SITE_ID = int(os.getenv("SITE_ID", 1))
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',  # Default
-    'allauth.account.auth_backends.AuthenticationBackend',  # Needed for allauth
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-LOGIN_REDIRECT_URL = '/chatroom/'   # after successful login
-LOGOUT_REDIRECT_URL = '/'           # after logout
-
-ACCOUNT_EMAIL_VERIFICATION = "none"  # disable email verification for dev
-ACCOUNT_EMAIL_REQUIRED = False       # Google/GitHub already provide email
-ACCOUNT_AUTHENTICATION_METHOD = "username"  # simple login
-
+LOGIN_REDIRECT_URL = '/chatroom/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "username"
 
 # ------------------------
-# Default primary key field type
-# ------------------------
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#-------------------------------
-#email hadler
-#-------------------------------
-
-import os
-
-# Use environment variable to set DEBUG
-DEBUG = os.getenv("DEBUG", "False") == "True"
-
-# Allowed hosts
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
-
 # Email settings
+# ------------------------
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp-relay.brevo.com"
 EMAIL_PORT = 587
@@ -157,5 +131,15 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("BREVO_SMTP_USER")
 EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_KEY")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
-CONTACT_RECIPIENT = os.getenv("CONTACT_RECIPIENT", os.getenv("BREVO_SMTP_USER"))
+CONTACT_RECIPIENT = os.getenv("CONTACT_RECIPIENT", EMAIL_HOST_USER)
 
+# ------------------------
+# Default primary key field type
+# ------------------------
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ------------------------
+# Google Auth (optional)
+# ------------------------
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("GOOGLE_CLIENT_ID")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
