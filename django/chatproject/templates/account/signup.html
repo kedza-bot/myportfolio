@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #e0f0ff;
+        }
+
+        .signup-container {
+            display: flex;
+            width: 900px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .signup-left {
+            flex: 1;
+            background: linear-gradient(135deg, #007BFF, #00A1FF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .signup-right {
+            flex: 1.2;
+            padding: 40px;
+        }
+
+        .signup-right h2 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            background: #007BFF;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .signup-right p {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .signup-right p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .third-party-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .third-party-login a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #007BFF;
+            color: #007BFF;
+            transition: all 0.3s;
+        }
+
+        .third-party-login a:hover {
+            background: #007BFF;
+            color: white;
+        }
+
+        @media(max-width: 900px) {
+            .signup-container {
+                flex-direction: column;
+            }
+            .signup-left {
+                height: 150px;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-left">
+            SIGN UP to Kedza
+        </div>
+        <div class="signup-right">
+            <h2>Create Your Account</h2>
+            <form method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email (optional)">
+                <input type="password" name="password1" placeholder="Password" required>
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+
+            <div class="third-party-login">
+                <a href="{% url 'social:begin' 'google' %}">Google</a>
+                <a href="{% url 'social:begin' 'facebook' %}">Facebook</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
