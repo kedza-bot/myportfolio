@@ -1,6 +1,15 @@
+from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django.urls import path, include
 from chatapp import views
+from chatapp.sitemaps import StaticViewSitemap
+
+
+
+# Register your sitemap classes here
+sitemaps = {
+    "static": StaticViewSitemap,
+}
 
 
 urlpatterns = [
@@ -26,5 +35,8 @@ urlpatterns = [
 
     # Allauth (Google/GitHub login)
     path("accounts/", include("allauth.urls")),
+    
+    # Sitemap
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
 ]
 

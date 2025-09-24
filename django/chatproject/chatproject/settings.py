@@ -40,6 +40,10 @@ INSTALLED_APPS = [
 
     # Your app
     'chatapp',
+    
+    #site map
+    'django.contrib.sitemaps',
+    
 ]
 
 MIDDLEWARE = [
