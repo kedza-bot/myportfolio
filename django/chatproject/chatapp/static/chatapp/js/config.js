@@ -41,13 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Helper function (syncs desktop + mobile icons) ---
     function setActive(mode) {
+        // Hide both icons first
         document.querySelectorAll("#toggle-light, #toggle-dark").forEach(i =>
             i.classList.remove("active")
         );
+
+        // Show the correct one
         if (mode === "dark") {
-            darkBtns.forEach(i => i.classList.add("active"));
+            darkBtns.forEach(i => i.classList.add("active"));  // show sun
         } else {
-            lightBtns.forEach(i => i.classList.add("active"));
+            lightBtns.forEach(i => i.classList.add("active")); // show moon
         }
     }
 });

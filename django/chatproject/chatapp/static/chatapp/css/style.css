@@ -1883,6 +1883,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--backgroung60);
   gap: 5px;
 }
 
@@ -2512,6 +2513,20 @@ header{
 .themess i:hover {
   transform: scale(1.1);
   color: #ffd369; /* soft highlight */
+}
+
+/* Hide both by default */
+#toggle-light,
+#toggle-dark {
+  display: none;
+}
+
+/* Show whichever is active */
+#toggle-light.active {
+  display: inline;
+}
+#toggle-dark.active {
+  display: inline;
 }
 
   
