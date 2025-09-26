@@ -2419,12 +2419,14 @@ header{
 
   /* Container */
   .chat-container {
-    position: fixed;
-    width: 100%;
-    margin: 110px auto 0 auto; /* adjust for fixed header */
-    height: 90vh; /* slightly smaller for mobile */
-    border-radius: 8px;
-    left: 3%;
+      position: fixed;
+      left: 70px;
+      /* offset by sidebar width */
+      width: calc(100% - 70px);
+      /* subtract sidebar */
+      margin: 110px auto 0 auto;
+      height: 79vh;
+      border-radius: 8px;
   }
 
   /* Chat box */
